@@ -1,3 +1,0 @@
-1. Buat database nama : tugas_web_php
-2. Export
-3. Selesai

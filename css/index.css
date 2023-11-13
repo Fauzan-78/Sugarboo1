@@ -360,6 +360,86 @@ body {
   width: 200px;
 }
 
+modal */ #myModal {
+  /* background-color: #e63b3b; */
+}
+
+.modal-product-data-header {
+  /* background-color: aqua; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: large;
+  font-weight: bolder;
+  color: maroon;
+}
+
+.close-button-modal {
+  background-color: white;
+  border-width: 0px;
+}
+
+.modal-product-data-body {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#idkl {
+  width: 300px;
+}
+
+.modal-product-data-nama {
+  width: 300px;
+  /* background-color: #e63b3b; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: right;
+}
+
+#product-name-jquery {
+  font-size: large;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+.inputan {
+  width: 200px;
+  /* background-color: #e8951a; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.decrement-btn {
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  background-color: #e8951a;
+}
+
+.increment-btn {
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  background-color: #e8951a;
+}
+
+.qty-input {
+  width: 100px;
+  background-color: white;
+  border-width: 0px;
+}
+
+.addToCartBtn {
+  width: 300px;
+  border-radius: 5px;
+  background-color: #e8951a;
+}
+
 @media (max-width: 991px) {
   /* CSS that should be displayed if width is equal to or less than 800px goes here */
 

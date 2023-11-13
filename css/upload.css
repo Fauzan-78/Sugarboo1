@@ -32,14 +32,6 @@ body {
   margin-bottom: 8px;
 }
 
-#upload_container form select {
-  padding: 8px;
-  outline: none;
-  color: #757575;
-  border: 1px solid lightblue;
-  margin-bottom: 8px;
-}
-
 #upload_container form button {
   padding: 8px;
   outline: none;
