@@ -1,0 +1,63 @@
+.payment-general{
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.paymet-header{
+	display: flex;
+	justify-content: space-evenly;
+	background-color: #e8951a;
+/*	border: solid #e8951a;*/
+	border-radius: 4px 4px 0px 0px;
+	padding: 4;
+}
+
+.paymet-header h4{
+	color: white;
+	padding-top: 5;
+}
+
+.payment-plainbg{
+	background-color: white;
+/*	border: solid black;*/
+	border-radius: 10px;
+	width: 100%;
+	margin: 10;
+/*	padding: 10;*/
+	filter: drop-shadow(0px 15px 5px #969696);
+}
+
+.payment-input{
+	border-radius: 4px;
+	border: solid black;
+	padding: 4;
+	margin-bottom: 8;
+}
+
+.o-pay{
+	height: 50px;
+}
+
+.pay-out p{
+	text-align:center; 
+	border: solid black; 
+	padding: 5px 5px 5px 5px;
+}
+
+hr.solid {
+  border-top: 3px solid black;
+}
+
+
+
+/*HIDDEN ARROW FOR INPUT TYPE NUMBER*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number]{
+    -moz-appearance: textfield;
+}
+
