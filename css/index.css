@@ -1,0 +1,614 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Open Sans", "sans-serif";
+}
+
+.tempat-navigasi {
+  background-color: #e8951a;
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  z-index: 100;
+}
+
+.tempat-navigasi-con {
+  /* background-color: aliceblue; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.tempat-navigasi-con-gambar {
+  /* background-color: blue; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.tempat-navigasi-con-gambar1 {
+  width: 100%;
+  /* background-color: aqua; */
+  margin-bottom: -40px;
+  margin-top: -40px;
+  margin-left: -100px;
+}
+
+.tempat-navigasi-con-konten {
+  /* background-color: red; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -10px;
+  margin-bottom: -10px;
+  margin-left: -100px;
+}
+
+.tempat-navigasi-con-konten-list {
+  /* background-color: rebeccapurple; */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu > a {
+  color: maroon;
+  font-weight: 600;
+}
+
+.menu > a.amenu:hover {
+  background-color: maroon;
+  color: white;
+  border-radius: 5px;
+}
+
+.menu > a.shop-bag:hover {
+  background-color: rgb(242, 255, 2);
+  color: white;
+  border-radius: 5px;
+}
+
+.menu-except > a:hover {
+  transform: scale(1.2);
+}
+
+.medsos-icon-img {
+  /* background-color: red; */
+  height: 30px;
+  width: 30px;
+}
+
+/* //section carosel */
+.carosel {
+  margin-top: 53px;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.p-slider {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 50px auto;
+  width: 95%;
+  /* background-color: #e63b3b; */
+}
+
+.kotak-product-slider-heading {
+  /* background-color: blueviolet; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -80px;
+}
+
+.kotak-product-slider-heading-img {
+  /* background-color: #e63b3b; */
+  width: 400px;
+  height: auto;
+}
+
+/* .slider-btns {
+  background-color: red;
+} */
+
+/* .product-slider-heading {
+  font-size: 28px;
+  text-transform: uppercase;
+  color: #313131;
+  text-align: center;
+  margin: 0px;
+  background-color: #e8951a;
+
+} */
+
+.product-box {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  padding: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  margin: 0px 20px;
+  position: relative;
+}
+
+.p-img-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+.p-img a,
+.p-img {
+  width: 100%;
+  height: 350px;
+  display: flex;
+}
+
+.p-img a img {
+  width: 100%;
+  height: 100%;
+  object-position: center;
+  object-fit: contain;
+  animation: fade 0.6s;
+}
+
+.p-img-back {
+  display: none;
+}
+
+.p-img-container:hover .p-img-back {
+  display: block;
+}
+
+.p-img-container:hover .p-img-front {
+  display: none;
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.p-box-text {
+  margin-top: 5px;
+  width: 100%;
+}
+
+.product-category {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.product-category span {
+  color: #acacac;
+  font-size: 0.9rem;
+  margin: 5px 0px;
+}
+
+.product-title {
+  color: #333333;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all ease 0.3s;
+}
+
+.product-title:hover {
+  color: #111111;
+  opacity: 0.7;
+  transition: all ease 0.3s;
+}
+
+.price-buy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.price-buy .p-price {
+  font-size: 1.3rem;
+  color: #333333;
+  font-weight: 700;
+}
+
+.price-buy .p-btn-buy {
+  color: #e63b3b;
+  margin: 0px 5px;
+  font-weight: 600;
+}
+
+.price-buy .p-btn-buy:hover {
+  text-decoration: underline;
+}
+
+.p-discount {
+  position: absolute;
+  left: 15px;
+  top: 20px;
+  width: 65px;
+  height: 24px;
+  color: #ffffff;
+  background-color: #e63b3b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  z-index: 100;
+  border-radius: 3px;
+}
+
+.slider-btns {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin: 30px auto 10px auto;
+  padding: 0px 10px;
+}
+
+.slider-btns button {
+  position: static !important;
+  transform: translate(0, 0);
+  background-color: #f3f3f3;
+  width: 80px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  border: 1px solid #cfcfcf;
+  border-radius: 4px;
+}
+
+.slider-btns button span {
+  font-weight: bold;
+  padding: 10px 15px 10px 10px;
+  position: relative;
+  text-decoration: none;
+}
+
+.slider-btns button span::before,
+.slider-btns button span::after {
+  border-right: 2px solid;
+  display: block;
+  height: 8px;
+  margin-top: -6px;
+  position: absolute;
+  transform: rotate(135deg);
+  right: 10px;
+  top: 50%;
+  width: 0;
+  content: "";
+}
+
+.slider-btns button span::after {
+  margin-top: -1px;
+  transform: rotate(45deg);
+}
+
+.slider-btns .glider-prev span {
+  transform: rotate(-180deg);
+}
+
+.jenis-makanan-kotak {
+  /* background-color: red; */
+  width: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.jenis-makanan-kotak-gambar-aset {
+  width: 400;
+  height: 500;
+}
+
+.jenis-makanan-kotak-keterangan {
+  /* background-color: aqua; */
+}
+
+.cara-order-kue {
+  /* background-color: tomato; */
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.foto-pengiriman-aset {
+  width: 450px;
+}
+
+.tatacara-pengiriman {
+  width: 50%;
+  padding-right: 30px;
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.jenis-pengiriman-baris {
+  /* background-color: #e63b3b; */
+}
+.jenis-pengiriman-foto {
+  width: 200px;
+}
+
+/* footer */
+
+.choose-store {
+  width: 150px;
+  height: 50px;
+  background-color: wheat;
+  font-size: large;
+  color: maroon;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.2s ease-in-out;
+}
+.choose-store:hover {
+  transform: scale(1.1);
+}
+/* footer */
+
+/* modal  */
+
+#myModal {
+  /* background-color: #e63b3b; */
+}
+
+.modal-product-data-header {
+  /* background-color: aqua; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: large;
+  font-weight: bolder;
+  color: maroon;
+}
+
+.close-button-modal {
+  background-color: white;
+  border-width: 0px;
+}
+
+.modal-product-data-body {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#idkl {
+  width: 300px;
+}
+
+.modal-product-data-nama {
+  width: 300px;
+  /* background-color: #e63b3b; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: right;
+}
+
+#product-name-jquery {
+  font-size: large;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+.inputan {
+  width: 200px;
+  /* background-color: #e8951a; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.decrement-btn {
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  background-color: #e8951a;
+}
+
+.increment-btn {
+  width: 35px;
+  height: 35px;
+  border-radius: 5px;
+  background-color: #e8951a;
+}
+
+.qty-input {
+  width: 100px;
+  background-color: white;
+  border-width: 0px;
+}
+
+.addToCartBtn {
+  width: 300px;
+  border-radius: 5px;
+  background-color: #e8951a;
+}
+
+@media (max-width: 991px) {
+  /* CSS that should be displayed if width is equal to or less than 800px goes here */
+
+  .tempat-navigasi-con {
+    /* background-color: teal; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .tempat-navigasi-con-konten {
+    /* background-color: red; */
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .tempat-navigasi-con-konten-list {
+    /* background-color: rebeccapurple; */
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-left: 80px;
+  }
+
+  .button-navigasi-handphone {
+    /* background-color: blue; */
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .foto-pengiriman-aset {
+    width: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .kotak-product-slider-heading {
+    margin-top: -80px;
+  }
+  .kotak-product-slider-heading-img {
+    /* background-color: #e63b3b; */
+    width: 300px;
+    height: auto;
+  }
+
+  .foto-pengiriman-aset {
+    width: 300px;
+  }
+}
+
+@media (max-width: 500px) {
+  .product-box {
+    margin: 0px 10px;
+  }
+  .p-slider {
+    width: 100%;
+  }
+  .product-slider-heading {
+    text-align: center;
+    font-size: 1.3rem;
+    display: flex;
+  }
+
+  .p-img a,
+  .p-img {
+    height: 200px;
+  }
+  .price-buy .p-price {
+    font-size: 1.1rem;
+  }
+  .p-img-container:hover .p-img-back {
+    display: none;
+  }
+
+  .p-img-container:hover .p-img-front {
+    display: block;
+  }
+
+  .kotak-product-slider-heading {
+    margin-top: -80px;
+  }
+
+  .kotak-product-slider-heading-img {
+    /* background-color: #e63b3b; */
+    width: 200px;
+    height: auto;
+  }
+
+  .jenis-makanan-kotak {
+    background-color: red;
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 5px;
+  }
+
+  .jenis-makanan-kotak-gambar-aset {
+    width: 400;
+    height: 400;
+  }
+
+  .cara-order-kue {
+    /* background-color: tomato; */
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .foto-pengiriman-aset {
+    width: 400px;
+    /* background-color: red; */
+    margin-bottom: 30px;
+  }
+
+  .tatacara-pengiriman {
+    /* background-color: #e8951a; */
+    width: 100%;
+    padding-right: 5px;
+    padding-left: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .jenis-pengiriman-foto {
+    width: 100px;
+  }
+}
+
+@media (max-width: 320px) {
+  .p-img a,
+  .p-img {
+    height: 190px;
+  }
+
+  .slider-btns {
+    padding: 0px;
+  }
+}
