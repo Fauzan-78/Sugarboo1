@@ -1,0 +1,90 @@
+    .card-columns {/* Mengatur struktur kolom */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+}
+    .card-horizontal {
+        width: 100%; /* lebar sesuai kebutuhan */
+        max-width: 93.75rem; /* lebar maksimum */ /* rem=px */
+        height: 12.5rem; /* tinggi sesuai kebutuhan */
+        background-color: #FFF8F7; /* Ganti warna latar belakang menjadi krem */
+        /* padding: 1.25rem; */
+        border: 0.063rem solid #ccc;
+        border-radius: 2.188rem;
+        margin: 1.25rem;
+        display: flex;
+        overflow: hidden; /* agar konten di dalam tidak keluar dari card */
+    }
+
+    .card-text{
+        height: 8rem;
+        width: 60.2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: left;
+    }
+
+    .lingkaran{
+        width: 15px;
+        height: 15px;
+        background-color: #14FF00;
+        border-radius: 100%;
+        margin-right: 10px;
+    }
+
+    .box-buka{
+        height: auto;
+        background-color: transparent;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+        margin-top: -25px;
+    }
+    .card-content {
+        /* Menggunakan flexbox untuk mengatur tata letak konten */
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%; /* agar konten terdistribusi secara proporsional */
+    }
+
+    .image-box {
+        width: 15%; /* lebar gambar */
+        height: 150%; /* tinggi sesuai kebutuhan */
+        margin-left : -20px;
+        overflow: hidden;
+        border-radius: 2.188rem;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .button-box{
+        width: 80px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        border-left: 0.4px solid grey;
+    }
+    .map-button-horizontal {
+        text-decoration: none;
+        color: #707070;
+        background-color: transparent;
+        border: none;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        transition: all 0.2s ease-in-out;
+        /* margin-right: -20px; */
+    }
+
+    .map-button-horizontal:hover{
+        transform: scale(1.2);
+    }
