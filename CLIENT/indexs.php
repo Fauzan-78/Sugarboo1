@@ -28,7 +28,7 @@ $all_product=$conn->query($sql);
       <nav class="navbar tempat-navigasi navbar-expand-lg bg-body-tertiary">
         <div class="tempat-navigasi-con container-fluid">
           <a class="tempat-navigasi-con-gambar navbar-brand" href="">
-            <img class="tempat-navigasi-con-gambar1 d-none d-lg-block" src="/img/sugarboo.png" alt="logo" />
+            <img class="tempat-navigasi-con-gambar1 d-none d-lg-block" src="../img/sugarboo.png" alt="logo" />
           </a>
           <button class="button-navigasi-handphone navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"><img style="width:40px" src="../img/navigasi-burger.png" alt=""></span>
@@ -62,9 +62,9 @@ $all_product=$conn->query($sql);
                 <a href="../function/handlecart.php" class="nav-link shop-bag" aria-disabled="true" ><img style="width:25px;" src="../img/shop-bag.png" alt=""></a>
               </li>
               <li class=" nav-item menu-except d-flex">
-                <a class="nav-link medsos-icon " aria-disabled="true" ><img class="medsos-icon-img" src="/img/youtube-icon.png" alt="yt"></a>
-                <a class="nav-link medsos-icon " aria-disabled="true" ><img class="medsos-icon-img" src="/img/instagram-icon.png" alt="yt"></a>
-                <a class="nav-link medsos-icon " aria-disabled="true" ><img class="medsos-icon-img" src="/img/facebook-icon.png" alt="yt"></a>
+                <a class="nav-link medsos-icon " aria-disabled="true" ><img class="medsos-icon-img" src="../img/youtube-icon.png" alt="yt"></a>
+                <a class="nav-link medsos-icon " aria-disabled="true" ><img class="medsos-icon-img" src="../img/instagram-icon.png" alt="yt"></a>
+                <a class="nav-link medsos-icon " aria-disabled="true" ><img class="medsos-icon-img" src="../img/facebook-icon.png" alt="yt"></a>
               </li>
           
             </ul>
@@ -335,7 +335,7 @@ $all_product=$conn->query($sql);
             <div class="row" >
               <div col-12>
               <a class="tempat-foto-footer" href="" style="display: flex;justify-content:center; align-items:center;">
-            <img class="tempat-foto-footer d-none d-lg-block" style="width: 300px;" src="/img/sugarboo.png" alt="logo" />
+            <img class="tempat-foto-footer d-none d-lg-block" style="width: 300px;" src="../img/sugarboo.png" alt="logo" />
           </a>
 
               </div>
@@ -408,13 +408,13 @@ $all_product=$conn->query($sql);
                 <div class="text-center text-md-right">
                   <ul class="list-unstyled list-inline">
                     <li class="list-inline-item">
-                      <a  aria-disabled="true" ><img class="medsos-icon-img" src="/img/youtube-icon.png" alt="yt"></a>
+                      <a  aria-disabled="true" ><img class="medsos-icon-img" src="../img/youtube-icon.png" alt="yt"></a>
                     </li>
                     <li class="list-inline-item">
-                      <a aria-disabled="true" ><img class="medsos-icon-img" src="/img/instagram-icon.png" alt="yt"></a>
+                      <a aria-disabled="true" ><img class="medsos-icon-img" src="../img/instagram-icon.png" alt="yt"></a>
                     </li>
                     <li class="list-inline-item">
-                      <a  aria-disabled="true" ><img class="medsos-icon-img" src="/img/facebook-icon.png" alt="yt"></a>
+                      <a  aria-disabled="true" ><img class="medsos-icon-img" src="../img/facebook-icon.png" alt="yt"></a>
                     </li>
                   </ul>
                 </div>
@@ -509,13 +509,13 @@ $all_product=$conn->query($sql);
                 <div class="text-center text-md-right">
                   <ul class="list-unstyled list-inline">
                     <li class="list-inline-item">
-                      <a  aria-disabled="true" ><img class="medsos-icon-img" src="/img/youtube-icon.png" alt="yt"></a>
+                      <a  aria-disabled="true" ><img class="medsos-icon-img" src="../img/youtube-icon.png" alt="yt"></a>
                     </li>
                     <li class="list-inline-item">
-                      <a aria-disabled="true" ><img class="medsos-icon-img" src="/img/instagram-icon.png" alt="yt"></a>
+                      <a aria-disabled="true" ><img class="medsos-icon-img" src="../img/instagram-icon.png" alt="yt"></a>
                     </li>
                     <li class="list-inline-item">
-                      <a  aria-disabled="true" ><img class="medsos-icon-img" src="/img/facebook-icon.png" alt="yt"></a>
+                      <a  aria-disabled="true" ><img class="medsos-icon-img" src="../img/facebook-icon.png" alt="yt"></a>
                     </li>
                   </ul>
                 </div>

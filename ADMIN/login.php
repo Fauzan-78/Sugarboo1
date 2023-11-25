@@ -25,12 +25,12 @@ if(isset($_COOKIE['cookie_username'])){
     if($r1['password']== $cookie_password){
         $_SESSION['session_username']=$cookie_username;
         $_SESSION['session_password']=$cookie_password;
-        header("location:/ADMIN/uploads.php");
+        header("location:../ADMIN/display.php");
     }
 }
 
 if(isset($_SESSION['session_username'])){
-    header("location:/ADMIN/uploads.php");
+    header("location:../ADMIN/display.php");
     exit();
     
 }
@@ -42,7 +42,7 @@ if(isset($_POST['login'])){
 
 
         if($username == '' or $password == ''){
-            $err .= "<li>Silakan masukkan username dan juga password.</li>";
+            $err .= "<li>Silahkan masukkan username dan juga password.</li>";
         }else{
             $sql1 = "select * from login where username = '$username' ";
             $q1 = mysqli_query($conn,$sql1);
@@ -69,7 +69,7 @@ if(isset($_POST['login'])){
             //         $cookie_time = time()+(60 * 60 * 24 * 30);
             //         setcookie($cookie_name,$cookie_value,$cookie_time,"/");
             //     }
-                header("location:/admin/uploads.php");
+                header("location:../admin/display.php");
             }
         }
 }
@@ -92,16 +92,16 @@ if(isset($_POST['login'])){
       <nav class="navbar tempat-navigasi navbar-expand-lg bg-body-tertiary">
         <div class="tempat-navigasi-con container-fluid">
           <a class="tempat-navigasi-con-gambar navbar-brand" href="">
-            <img class="tempat-navigasi-con-gambar1 d-none d-lg-block" src="/img/sugarboo.png" style="width:250px;margin-left:-55px;" alt="logo" />
+            <img class="tempat-navigasi-con-gambar1 d-none d-lg-block" src="../img/sugarboo.png" style="width:300px;margin-left:-55px;" alt="logo" />
           </a>
-          <button class="button-navigasi-handphone navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <!-- <button class="button-navigasi-handphone navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"><img style="width:40px" src="../img/navigasi-burger.png" alt=""></span>
             <span class="navbar-toggler-icon"><img style="height:100px;  margin-top:-35px; margin-left:-150px;" src="../img/sugarboo.png" alt=""></span>
-          </button>
+          </button> -->
           
         </div>
       </nav>
-    </section>
+</section>
 <div class="container-fluid kotaklogin">
 <div class="row content-baris">
     Login
@@ -114,7 +114,8 @@ if(isset($_POST['login'])){
 
    <?php } ?>
 <form action="" method="post" >
-<div class="mb-3">
+  <div class="mb-3">
+    <br>
     <label for="exampleInputEmail1" class="form-label">Username</label>
     <input type="text" class="form-control" id="inputusername" name="username" value="<?php echo $username ?>" placeholder="username" >
   </div>
@@ -123,10 +124,10 @@ if(isset($_POST['login'])){
     <input type="password" class="form-control" id="exampleInputPassword1" name="password">
   </div>
   <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="ingataku" value="1" <?php if($ingataku == 1) echo "checked"?>>ingat aku
+    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="ingataku" value="1" <?php if($ingataku == 1) echo "checked"?>>Ingat Aku
     <!-- <label class="form-check-label" for="exampleCheck1">ingat saya</label> -->
   </div>
-  <button type="submit" class="btn btn-primary login-button" name="login">login</button>
+  <button type="submit" class="btn btn-primary login-button" name="login">Login</button>
 </form>
 </div>
 </div>

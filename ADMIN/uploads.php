@@ -70,8 +70,28 @@ if($upload_ok==0){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/upload.css">
+    
 </head>
 <body>
+    <!-- NAVBAR ADMIN -->
+    <section id="navigasi">
+      <nav class="navbaradmin">
+        <div class="navbaradminmenu">
+          <a href="" class="navbaradminpic">
+            <img  src="../img/sugarboo.png" style="width:300px;margin-left:-50px;margin-bottom: -27px; margin-top:-26px" alt="logo" />
+          </a>
+          <div class="navlistadmin">
+            <a class="navlistadmina" href="uploads.php">UPLOAD</a>
+            <a class="navlistadmina" href="display.php">VIEW LIST</a>
+          </div>
+          <div class="exitadmin">
+            <a href="../CLIENT/indexs.php">EXIT ADMIN</a>
+          </div>
+        </div>
+      </nav>
+    </section>
+    <!-- END OF NAVBAR ADMIN -->
+
     <?php
     // include_once "header.php";
     #include berarti memasukkan, artinya kita memasukkan  file kedalam dokumen kita, file tersebut bisa apa saja, 

@@ -10,7 +10,7 @@ body {
 }
 
 .tempat-navigasi {
-  background-color: #e8951a;
+  background-color: #0D6EFD;
   position: fixed;
   width: 100%;
   top: 0px;
@@ -96,18 +96,18 @@ a {
 }
 
 .kotaklogin {
-  background-color: aqua;
+  background-color: white;
   margin-top: 20vh;
   margin-bottom: 20vh;
-  margin-left: 20vh;
+  margin-left: 50vh;
   margin-right: 20vh;
-  width: auto;
+  width: 50%;
   box-shadow: 2px 2px 50px #9a9898;
   border-radius: 10px;
 }
 
 .content-baris {
-  background-color: orange;
+  background-color: #0D6EFD;
   height: 50px;
   border-radius: 10px 10px 0px 0px;
   display: flex;
@@ -115,10 +115,11 @@ a {
   align-items: center;
   font-size: 25px;
   font-weight: bold;
-  color: maroon;
+  color: white;
 }
 
 .login-button {
-  width: 100%;
+  margin-left: 30%;
+  width: 40%;
   margin-bottom: 25px;
 }

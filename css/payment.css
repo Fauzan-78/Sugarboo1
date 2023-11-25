@@ -131,6 +131,13 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 4px 0px 4px 0px;
+}
+
+.header-biodata p{
+  font-size: medium;
+  font-weight: 600 ;
+  margin-bottom: -1px;
 }
 
 .footer-biodata {
@@ -141,6 +148,11 @@ a {
   align-items: center;
   padding-left: 10px;
   padding-right: 10px;
+}
+.footer-biodata p{
+  margin: 4px 0px 5px 0px;
+  font-weight: 600;
+  font-size: medium;
 }
 
 .input-control {
@@ -274,7 +286,27 @@ td {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  font-size: 25px;
+  /* font-size: 15px; */
+}
+.konten-cart-informasi .konten-cart-informasi2 {
+  padding-left: 5px;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 13px;
+}
+
+.konten-cart-informasi .konten-cart-informasi3 {
+  padding-left: 5px;
+  margin: 3px 0px;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  font-size: 15px;
 }
 
 .remove-handphone {

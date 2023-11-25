@@ -177,48 +177,52 @@ $all_product=$conn->query($sql);
     <body>
         <!-- navbar -->
         <section id="navigasi">
-            <nav class="navbar tempat-navigasi navbar-expand-lg bg-body-tertiary">
-                <div class="tempat-navigasi-con container-fluid">
-                <a class="tempat-navigasi-con-gambar navbar-brand" href="indexs.php">
-                    <img class="tempat-navigasi-con-gambar1 d-none d-lg-block" src="../img/sugarboo.png" alt="logo" />
-                </a>
-                <button class="button-navigasi-handphone navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"><img style="width:40px" src="../img/navigasi-burger.png" alt=""></span>
-                    <span class="navbar-toggler-icon"><img style="height:100px;  margin-top:-35px; margin-left:-150px;" src="../img/sugarboo.png" alt=""></span>
-                </button>
-                <div class="tempat-navigasi-con-konten collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="tempat-navigasi-con-konten-list navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item menu ">
-                        <a class="nav-link" aria-current="indexs.php" href="indexs.php">Home</a>
-                    </li>
-                    <li class="nav-item menu ">
-                        <a class="nav-link" href="product.php" role="button">Product</a>
-                        <!-- <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul> -->
-                    </li>
-                    <li class="nav-item menu ">
-                        <a class="nav-link active" href="about-us.php">About US</a>
-                    </li>
-                    <li class="nav-item menu ">
-                        <a class="nav-link " href="outlet.php">Outlet</a>
-                    </li>
-                    <li class="nav-item menu ">
-                        <a class="nav-link " aria-disabled="true" >SHOP NOW</a>
-                    </li>
-                    <li class=" nav-item menu-except d-flex">
-                        <a class="nav-link medsos-icon " aria-disabled="true" ><img class="medsos-icon-img" src="../img/youtube-icon.png" alt="yt"></a>
-                        <a class="nav-link medsos-icon " aria-disabled="true" ><img class="medsos-icon-img" src="../img/instagram-icon.png" alt="yt"></a>
-                        <a class="nav-link medsos-icon " aria-disabled="true" ><img class="medsos-icon-img" src="../img/facebook-icon.png" alt="yt"></a>
-                    </li>
-                
+        <nav class="navbar tempat-navigasi navbar-expand-lg bg-body-tertiary">
+            <div class="tempat-navigasi-con container-fluid">
+            <a class="tempat-navigasi-con-gambar navbar-brand" href="">
+                <img class="tempat-navigasi-con-gambar1 d-none d-lg-block" src="../img/sugarboo.png" alt="logo" />
+            </a>
+            <button class="button-navigasi-handphone navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><img style="width:40px" src="../img/navigasi-burger.png" alt=""></span>
+                <span class="navbar-toggler-icon"><img style="height:100px;  margin-top:-35px; margin-left:-150px;" src="../img/sugarboo.png" alt=""></span>
+            </button>
+            <div class="tempat-navigasi-con-konten collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="tempat-navigasi-con-konten-list navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item menu ">
+                    <a class="nav-link active amenu" aria-current="page" href="indexs.php">Home</a>
+                </li>
+                <li class="nav-item dropdown menu ">
+                    <a class="nav-link dropdown-toggle amenu" href="product.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">Product</a>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="product.php#product-bread">bread</a></li>
+                    <li><a class="dropdown-item" href="product.php#product-danish">danish</a></li>
+                    <li><a class="dropdown-item" href="product.php#product-cookies">cookies</a></li>
+                    <li><a class="dropdown-item" href="product.php#product-cakes">cakes</a></li>
+                    <li><a class="dropdown-item" href="product.php#product-traditional">traditional</a></li>
+                    <li><a class="dropdown-item" href="product.php#product-toast">toast</a></li>
+                    <li><a class="dropdown-item" href="product.php#product-hampers">hampers</a></li>
+                    
                     </ul>
-                </div>
-                </div>
-            </nav>
+                </li>
+                <li class="nav-item menu ">
+                    <a class="nav-link amenu" href="about-us.php">About US</a>
+                </li>
+                <li class="nav-item menu ">
+                    <a class="nav-link amenu" href="outlet.php" aria-disabled="true">Outlet</a>
+                </li>
+                <li class="nav-item menu ">
+                    <a href="../function/handlecart.php" class="nav-link shop-bag" aria-disabled="true" ><img style="width:25px;" src="../img/shop-bag.png" alt=""></a>
+                </li>
+                <li class=" nav-item menu-except d-flex">
+                    <a class="nav-link medsos-icon " aria-disabled="true" ><img class="medsos-icon-img" src="../img/youtube-icon.png" alt="yt"></a>
+                    <a class="nav-link medsos-icon " aria-disabled="true" ><img class="medsos-icon-img" src="../img/instagram-icon.png" alt="yt"></a>
+                    <a class="nav-link medsos-icon " aria-disabled="true" ><img class="medsos-icon-img" src="../img/facebook-icon.png" alt="yt"></a>
+                </li>
+            
+                </ul>
+            </div>
+            </div>
+        </nav>
         </section>
         <!-- end of navbar -->
 

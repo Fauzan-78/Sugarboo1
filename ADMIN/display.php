@@ -20,20 +20,24 @@ require_once '../database/connection.php';
     <title>Document</title>
 </head>
 <body>
+<!-- NAVBAR ADMIN -->
 <section id="navigasi">
-      <nav class="navbar tempat-navigasi navbar-expand-lg bg-body-tertiary">
-        <div class="tempat-navigasi-con container-fluid">
-          <a class="tempat-navigasi-con-gambar navbar-brand" href="">
-            <img class="tempat-navigasi-con-gambar1 d-none d-lg-block" src="/img/sugarboo.png" style="width:250px;margin-left:-55px;" alt="logo" />
+      <nav class="navbaradmin">
+        <div class="navbaradminmenu">
+          <a href="" class="navbaradminpic">
+            <img  src="../img/sugarboo.png" style="width:300px;margin-left:-50px;margin-bottom: -27px; margin-top:-26px" alt="logo" />
           </a>
-          <button class="button-navigasi-handphone navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"><img style="width:40px" src="../img/navigasi-burger.png" alt=""></span>
-            <span class="navbar-toggler-icon"><img style="height:100px;  margin-top:-35px; margin-left:-150px;" src="../img/sugarboo.png" alt=""></span>
-          </button>
-          
+          <div class="navlistadmin">
+            <a class="navlistadmina" href="uploads.php">UPLOAD</a>
+            <a class="navlistadmina" href="display.php">VIEW LIST</a>
+          </div>
+          <div class="exitadmin">
+            <a href="../CLIENT/indexs.php">EXIT ADMIN</a>
+          </div>
         </div>
       </nav>
     </section>
+    <!-- END OF NAVBAR ADMIN -->
 
 <section id="tabel-display">
 <h4 class="header-upload">Uploads product to database</h4>
@@ -44,11 +48,11 @@ require_once '../database/connection.php';
   <thead>
     <tr class="header-tr">
       <th scope="col">Product ID</th>
+      <th scope="col">Product Image</th>
       <th scope="col">Product Name</th>
       <th scope="col">Product Category</th>
       <th scope="col">Price</th>
       <th scope="col">Discount</th>
-      <th scope="col">Product Image</th>
       <th scope="col">Keterangan</th>
       <th scope="col">Operations</th>
     </tr>
@@ -64,7 +68,7 @@ require_once '../database/connection.php';
             $product_image = $row['product_image'];
             $product_name = $row['product_name'];
             $product_category = $row['product_category'];
-            $price= $row['price'];
+            $price= number_format($row['price'],2,",",".");
             $discount = $row['discount'];
             $keterangan = $row['keterangan'];
     ?>
@@ -74,7 +78,7 @@ require_once '../database/connection.php';
       <td><?php echo $product_name;?></td>
       <td><?php echo $product_category;?></td>
       <td><?php echo $price; ?></td>
-      <td><?php echo $discount;?></td>
+      <td><?php echo $discount . "%";?></td>
       <td><?php echo $keterangan; ?></td>
       <td>
         <button class="btn btn-primary button-edit-product"><a style="color:white;text-decoration:none;" href="update.php?updateid=<?php echo  $product_id;?>">Edit</a></button>

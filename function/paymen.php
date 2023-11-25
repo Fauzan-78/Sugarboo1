@@ -96,7 +96,7 @@ if(isset($_POST["submit"])){
       <nav class="navbar tempat-navigasi navbar-expand-lg bg-body-tertiary">
         <div class="tempat-navigasi-con container-fluid">
           <a class="tempat-navigasi-con-gambar navbar-brand" href="">
-            <img class="tempat-navigasi-con-gambar1 d-none d-lg-block" src="/img/sugarboo.png" alt="logo" />
+            <img class="tempat-navigasi-con-gambar1 d-none d-lg-block" src="../img/sugarboo.png" alt="logo" />
           </a>
           <button class="button-navigasi-handphone navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"><img style="width:40px" src="../img/navigasi-burger.png" alt=""></span>
@@ -130,9 +130,9 @@ if(isset($_POST["submit"])){
                 <a href="../function/handlecart.php" class="nav-link shop-bag" aria-disabled="true" ><img style="width:25px;" src="../img/shop-bag.png" alt=""></a>
               </li>
               <li class=" nav-item menu-except d-flex">
-                <a class="nav-link medsos-icon " aria-disabled="true" ><img class="medsos-icon-img" src="/img/youtube-icon.png" alt="yt"></a>
-                <a class="nav-link medsos-icon " aria-disabled="true" ><img class="medsos-icon-img" src="/img/instagram-icon.png" alt="yt"></a>
-                <a class="nav-link medsos-icon " aria-disabled="true" ><img class="medsos-icon-img" src="/img/facebook-icon.png" alt="yt"></a>
+                <a class="nav-link medsos-icon " aria-disabled="true" ><img class="medsos-icon-img" src="../img/youtube-icon.png" alt="yt"></a>
+                <a class="nav-link medsos-icon " aria-disabled="true" ><img class="medsos-icon-img" src="../img/instagram-icon.png" alt="yt"></a>
+                <a class="nav-link medsos-icon " aria-disabled="true" ><img class="medsos-icon-img" src="../img/facebook-icon.png" alt="yt"></a>
               </li>
           
             </ul>
@@ -150,7 +150,7 @@ if(isset($_POST["submit"])){
         <div class="pembayaran-konten">
       <div class= "informasi-pelanggan ">
       <div class="header-biodata">
-        Biodata
+        <p>Biodata</p>
         </div>
         <div class="input-control">
           <label for="nama">Nama</label>
@@ -187,7 +187,7 @@ if(isset($_POST["submit"])){
 
       <div class="alamat-pengiriman">
       <div class="header-biodata">
-        Pengiriman
+        <p>Pengiriman</p>
         </div>
 
         <div class="input-control">
@@ -245,7 +245,7 @@ if(isset($_POST["submit"])){
       <div class= "Ringkasan-pemesanan">
       
       <div class="header-biodata">
-        Ringkasan Pemesanan
+        <p>Ringkasan Pemesanan</p>
         </div>
       <section style="overflow-y: scroll; height:300px;" id="tabel-cart-handphone" >
       <table class = 'table table-bordered table-stripped '>
@@ -256,17 +256,17 @@ if(isset($_POST["submit"])){
     foreach($_SESSION['cart'] as $key => $value){
     ?>
 
-<tr >
+    <tr >
                     <td class="td-handphone"> 
                       <div class="konten-cart-isi-handphone">
                       <img class="gambar-produk" src="<?= $value['prod_img']?>"  >
                       <div class="konten-cart-informasi">
-                     <div> <?= $value['prod_name']?></div>
-                     <div>Jml : <?= $value['prod_qty']?></div>
-                     <div>Rp <?= $value['prod_total_price']?></div>
+                     <div class="konten-cart-informasi3"> <?= $value['prod_name']?></div>
+                     <div class="konten-cart-informasi2">Jml : <?= $value['prod_qty']?></div>
+                     <div class="konten-cart-informasi3">Rp. <?= number_format($value['prod_total_price'],2,",",".")?></div>
                       </div>
                       </div>  
-                <tr>
+    </tr>
     <?PHP
         }
     }
@@ -275,13 +275,13 @@ if(isset($_POST["submit"])){
     </section>
 
     <div class="footer-biodata">
-        <div>total pemesanan</div>
-        <div>Rp <?=number_format($total,2,",",".")?></div>
+        <div><p>Total Pemesanan</p></div>
+        <div><p>Rp. <?=number_format($total,2,",",".")?></p></div>
         </div>
     </div>
     <div class="pilih-metode-pengiriman">
     <div class="header-biodata">
-        Metode Pembayaran
+        <p>Metode Pembayaran</p>
         </div>
 <div class="input-control-metode-pembayaran">
 <div class="input-pembayaran-kotak">
@@ -328,7 +328,7 @@ if(isset($_POST["submit"])){
             <div class="row" >
               <div col-12>
               <a class="tempat-foto-footer" href="" style="display: flex;justify-content:center; align-items:center;">
-            <img class="tempat-foto-footer d-none d-lg-block" style="width: 300px;" src="/img/sugarboo.png" alt="logo" />
+            <img class="tempat-foto-footer d-none d-lg-block" style="width: 300px;" src="../img/sugarboo.png" alt="logo" />
           </a>
 
               </div>
@@ -401,13 +401,13 @@ if(isset($_POST["submit"])){
                 <div class="text-center text-md-right">
                   <ul class="list-unstyled list-inline">
                     <li class="list-inline-item">
-                      <a  aria-disabled="true" ><img class="medsos-icon-img" src="/img/youtube-icon.png" alt="yt"></a>
+                      <a  aria-disabled="true" ><img class="medsos-icon-img" src="../img/youtube-icon.png" alt="yt"></a>
                     </li>
                     <li class="list-inline-item">
-                      <a aria-disabled="true" ><img class="medsos-icon-img" src="/img/instagram-icon.png" alt="yt"></a>
+                      <a aria-disabled="true" ><img class="medsos-icon-img" src="../img/instagram-icon.png" alt="yt"></a>
                     </li>
                     <li class="list-inline-item">
-                      <a  aria-disabled="true" ><img class="medsos-icon-img" src="/img/facebook-icon.png" alt="yt"></a>
+                      <a  aria-disabled="true" ><img class="medsos-icon-img" src="../img/facebook-icon.png" alt="yt"></a>
                     </li>
                   </ul>
                 </div>
@@ -502,13 +502,13 @@ if(isset($_POST["submit"])){
                 <div class="text-center text-md-right">
                   <ul class="list-unstyled list-inline">
                     <li class="list-inline-item">
-                      <a  aria-disabled="true" ><img class="medsos-icon-img" src="/img/youtube-icon.png" alt="yt"></a>
+                      <a  aria-disabled="true" ><img class="medsos-icon-img" src="../img/youtube-icon.png" alt="yt"></a>
                     </li>
                     <li class="list-inline-item">
-                      <a aria-disabled="true" ><img class="medsos-icon-img" src="/img/instagram-icon.png" alt="yt"></a>
+                      <a aria-disabled="true" ><img class="medsos-icon-img" src="../img/instagram-icon.png" alt="yt"></a>
                     </li>
                     <li class="list-inline-item">
-                      <a  aria-disabled="true" ><img class="medsos-icon-img" src="/img/facebook-icon.png" alt="yt"></a>
+                      <a  aria-disabled="true" ><img class="medsos-icon-img" src="../img/facebook-icon.png" alt="yt"></a>
                     </li>
                   </ul>
                 </div>

@@ -115,16 +115,16 @@
 
   .button-uploads{
     width: 90%;
-    border: 0.5px solid black;
+    border: 0.5px solid #98d8ed;
     border-radius: 5px;
     transition: all 0.2s ease-in-out;
-    background-color: #ffc56e ;
+    background-color: #98d8ed ;
     font-size: 30px;
   }
 
   .button-uploads:hover{
   transform: scale(1.02);
-  background-color: #e8951a ;
+  background-color: #35c4f2;
   }
 
   .tabel-asli-untuk-display{
@@ -132,26 +132,30 @@
     width: 90%;
     margin-top: 20px;
     box-shadow: 2px 2px 50px #9a9898;
-    font-size: 30px;
+    font-size: 20px;
+
+    text-align: center;
   }
 
   .header-tr{
-    background-color: #e8951a;
-    color: maroon;
-    font-size: 32px;
+    background-color: #35c4f2;
+    color: #19191a;
+    font-size: 20px;
+    padding: 0px 5px 0px 5px;
+    align-content: center;
   }
 
   .button-edit-product{
     width: 100px;
     text-decoration: none;
-    font-size: 30px;
+    font-size: 20px;
     /* background-color: rgb(0, 128, 255); */
   }
 
   .button-delete-product{
     width: 100px;
     text-decoration: none;
-    font-size: 30px;
+    font-size: 20px;
   }
 
   .konten-tr{
@@ -159,3 +163,76 @@
     justify-content: center;
     align-items: center;
   }
+
+   /* CSS NAVBAR ADMIN */
+   .navbaradmin{
+    background-color: #0D6EFD; 
+    position: fixed; 
+    width: 100%; 
+    top: 0px; 
+    z-index: 100;
+  }
+  .navbaradminmenu{
+    display: flex; 
+    justify-content: space-between; 
+    flex-direction: row; 
+    align-items: center;
+  }
+  .navbaradminpic{
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center;
+  }
+  
+  .navlistadmin{
+    display:flex;
+    justify-content: space-evenly;
+  }
+  
+  .navlistadmina{
+    text-decoration: none;
+    padding: 8px;
+    color: white;
+    font-size: 15px;
+    margin-right: 80px;
+  }
+  
+  .navlistadmina:hover{
+    text-decoration: none;
+    background-color: white;
+    border-radius: 4px;
+    padding: 8px;
+    color: black;
+    font-size: 15px;
+    margin-right: 80px;
+  }
+  
+  .exitadmin{
+    background-color: white;
+    border: none;
+    margin-right: 10vh;
+    padding: 8px;
+    border-radius: 4px;
+  }
+  
+  .exitadmin a{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 15px;
+  }
+  
+  /* .exitadmin:hover{
+    background-color: #0D6EFD;
+    border: solid white ;
+    margin-right: 10vh;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  .exitadmin:hover a{
+    color: white;
+    font-weight: bold;
+    font-size: 2vh;
+  } */
+  
+  /* END OF CSS NAVBAR ADMIN */

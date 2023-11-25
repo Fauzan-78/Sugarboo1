@@ -52,9 +52,10 @@
     }
 
     .image-box {
-        width: 15%; /* lebar gambar */
+        width: 20%; /* lebar gambar */
         height: 150%; /* tinggi sesuai kebutuhan */
         margin-left : -20px;
+        margin-right: 10px;
         overflow: hidden;
         border-radius: 2.188rem;
     }
