@@ -60,19 +60,17 @@
   font-weight: 600;
 }
 
-.menu > a:hover {
+.menu > a.amenu:hover {
   background-color: maroon;
   color: white;
   border-radius: 5px;
-  padding: 0px;
 }
-/* .menu-except { */
-/* background-color: aquamarine;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center; */
-/* } */
+
+.menu > a.shop-bag:hover {
+  background-color: rgb(242, 255, 2);
+  color: white;
+  border-radius: 5px;
+}
 
 .menu-except > a:hover {
   transform: scale(1.2);
@@ -280,6 +278,16 @@ popovers */
   border-style: solid;
   border-width: 3px;
 }
+
+/* footer */
+.choose-store {
+  transition: all 0.2s ease-in-out;
+}
+.choose-store:hover {
+  transform: scale(1.1);
+}
+/* footer */
+
 /* 
 modal */
 #myModal {

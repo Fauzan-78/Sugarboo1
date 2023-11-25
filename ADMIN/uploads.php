@@ -8,15 +8,15 @@ if(isset($_POST["submit"])){
     $productcategory = $_POST["productcategory"];
     $price = $_POST["price"];
     $discount = $_POST["discount"];
-}
+
 
 //untuk upload foto
 // $upload_dir ="C:/xampp/htdocs/FINAL_TUGAS_WEB/penyimpanan/uploads_promo/";// this is where the uploaded photo stored
 $upload_dir ="../penyimpanan/uploads_Image/";
 $product_image= $upload_dir.$_FILES["imageUpload"]["name"];
-echo $product_image;
 $upload_dir.$_FILES["imageUpload"]["name"];
 $upload_file =$upload_dir.basename($_FILES["imageUpload"]["name"]);
+echo $upload_file;
 $imageType = strtolower(pathinfo($upload_file,PATHINFO_EXTENSION)); //used tu detected image format
 $check = $_FILES["imageUpload"]["size"];
 $upload_ok=0;
@@ -48,8 +48,10 @@ if($upload_ok==0){
 
         if($conn->query($sql)==TRUE){
             echo  "<script>alert('your product upload to database')</script>";
+            header('location:display.php');
         }
     }
+}
 }
 
 
@@ -68,8 +70,28 @@ if($upload_ok==0){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/upload.css">
+    
 </head>
 <body>
+    <!-- NAVBAR ADMIN -->
+    <section id="navigasi">
+      <nav class="navbaradmin">
+        <div class="navbaradminmenu">
+          <a href="" class="navbaradminpic">
+            <img  src="../img/sugarboo.png" style="width:300px;margin-left:-50px;margin-bottom: -27px; margin-top:-26px" alt="logo" />
+          </a>
+          <div class="navlistadmin">
+            <a class="navlistadmina" href="uploads.php">UPLOAD</a>
+            <a class="navlistadmina" href="display.php">VIEW LIST</a>
+          </div>
+          <div class="exitadmin">
+            <a href="../CLIENT/indexs.php">EXIT ADMIN</a>
+          </div>
+        </div>
+      </nav>
+    </section>
+    <!-- END OF NAVBAR ADMIN -->
+
     <?php
     // include_once "header.php";
     #include berarti memasukkan, artinya kita memasukkan  file kedalam dokumen kita, file tersebut bisa apa saja, 
@@ -77,7 +99,7 @@ if($upload_ok==0){
     ?>
 
     <section id="upload_container">
-        <form action="uploads.php" method="POST" enctype="multipart/form-data" >
+        <form  method="POST" enctype="multipart/form-data" >
             <input type="text" name="productname" id="productname" placeholder="Product Name" required>
             <label for="productcategory"><p style="font-size: 15px; color:#757575; margin: 8px 0px 8px 0px;">Product Category : </p></label>
             <select name="productcategory" id="productcategory" placeholder="Product Category"  required>

@@ -57,11 +57,12 @@ $(document).ready(function () {
         prod_price: price,
         prod_img: img,
         prod_name: name,
+        prod_total_price: qty * price,
         scope: "add",
       },
       // dataType: "dataType",
       success: function (response) {
-        if (response == 201) {
+        if (response === 201) {
           alert("Data Berhasil Ditambahkan");
         } else if (response == 301) {
           alert("Produk gagal ditambahkan");
@@ -70,11 +71,33 @@ $(document).ready(function () {
         }
       },
     });
+
+    location.href = "../CLIENT/product.php";
   });
 
-  // $(".removeproductcart").click(function (e) {
+  // $(".Bayar-sekarang").click(function (e) {
   //   e.preventDefault();
+  //   var data_bayar = $(this).attr("data-bayar");
+  //   var array_bayar = $(this).attr("array-bayar");
 
-  //   $(".cart-product-content").load("../function/handlecart.php");
+  //   $.ajax({
+  //     type: "POST",
+  //     url: "../function/pembayaran.php",
+  //     data: {
+  //       data_bayar: data_bayar,
+  //       array_bayar: array_bayar,
+  //       scope: "add",
+  //     },
+  //     // dataType: "dataType",
+  //     success: function (response) {
+  //       if (response == 201) {
+  //         alert("Data Berhasil Ditambahkan");
+  //       } else if (response == 301) {
+  //         alert("Produk gagal ditambahkan");
+  //       } else if (response == "existing") {
+  //         alert("produk udah ada");
+  //       }
+  //     },
+  //   });
   // });
 });

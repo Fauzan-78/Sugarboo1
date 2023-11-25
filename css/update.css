@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: Georgia, "Times New Roman", Times, serif;
+  }
+  
+  html {
+    font-size: 62.5%;
+  }
+  
+  body {
+    background-color: #fff;
+  }
+  
+  #upload_container {
+    margin: 10% auto;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+  
+  #upload_container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #upload_container form input {
+    padding: 8px;
+    outline: none;
+    border: 1px solid lightblue;
+    margin-bottom: 8px;
+  }
+  
+  #upload_container form button {
+    padding: 8px;
+    outline: none;
+    background-color: lightblue;
+    border: none;
+    margin-bottom: 8px;
+    cursor: pointer;
+  }
+  
+  #upload_container form input[type="submit"] {
+    background-color: lightgray;
+    border: none;
+  }
+  
+  #upload_container form input[type="submit"]:hover {
+    background-color: white;
+    cursor: pointer;
+    border: 1px solid lightblue;
+  }
+  
+  /* CSS NAVBAR ADMIN */
+  .navbaradmin{
+    background-color: #0D6EFD; 
+    position: fixed; 
+    width: 100%; 
+    top: 0px; 
+    z-index: 100;
+  }
+  .navbaradminmenu{
+    display: flex; 
+    justify-content: space-between; 
+    flex-direction: row; 
+    align-items: center;
+  }
+  .navbaradminpic{
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center;
+  }
+  
+  .navlistadmin{
+    display:flex;
+    justify-content: space-evenly;
+  }
+  
+  .navlistadmina{
+    text-decoration: none;
+    padding: 8px;
+    color: white;
+    font-size: 15px;
+    margin-right: 80px;
+  }
+  
+  .navlistadmina:hover{
+    text-decoration: none;
+    background-color: white;
+    border-radius: 4px;
+    padding: 8px;
+    color: black;
+    font-size: 15px;
+    margin-right: 80px;
+  }
+  
+  .exitadmin{
+    background-color: white;
+    border: none;
+    margin-right: 10vh;
+    padding: 8px;
+    border-radius: 4px;
+  }
+  
+  .exitadmin a{
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    text-decoration: none;
+  }
+  
+  /* .exitadmin:hover{
+    background-color: #0D6EFD;
+    border: solid white ;
+    margin-right: 10vh;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  .exitadmin:hover a{
+    color: white;
+    font-weight: bold;
+    font-size: 2vh;
+  } */
+  
+  /* END OF CSS NAVBAR ADMIN */

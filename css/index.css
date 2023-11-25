@@ -60,19 +60,17 @@
   font-weight: 600;
 }
 
-.menu > a:hover {
+.menu > a.amenu:hover {
   background-color: maroon;
   color: white;
   border-radius: 5px;
-  padding: 0px;
 }
-/* .menu-except { */
-/* background-color: aquamarine;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center; */
-/* } */
+
+.menu > a.shop-bag:hover {
+  background-color: rgb(242, 255, 2);
+  color: white;
+  border-radius: 5px;
+}
 
 .menu-except > a:hover {
   transform: scale(1.2);
@@ -360,7 +358,28 @@ body {
   width: 200px;
 }
 
-modal */ #myModal {
+/* footer */
+
+.choose-store {
+  width: 150px;
+  height: 50px;
+  background-color: wheat;
+  font-size: large;
+  color: maroon;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.2s ease-in-out;
+}
+.choose-store:hover {
+  transform: scale(1.1);
+}
+/* footer */
+
+/* modal  */
+
+#myModal {
   /* background-color: #e63b3b; */
 }
 
@@ -495,17 +514,6 @@ modal */ #myModal {
   .foto-pengiriman-aset {
     width: 300px;
   }
-}
-
-.choose-store {
-  width: 150px;
-  height: 50px;
-  background-color: wheat;
-  font-size: large;
-  color: maroon;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 @media (max-width: 500px) {

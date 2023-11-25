@@ -2,7 +2,7 @@
 
 
 <?PHP
-require_once '../database/connection.php';
+require_once 'C:\xampp\htdocs\FINAL_TUGAS_WEB\database\connection.php';
 $sql = "SELECT * FROM product WHERE product_category = 'promo'";
 $all_product=$conn->query($sql);
 ?>
@@ -37,10 +37,10 @@ $all_product=$conn->query($sql);
           <div class="tempat-navigasi-con-konten collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="tempat-navigasi-con-konten-list navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item menu ">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active amenu" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item dropdown menu ">
-                <a class="nav-link dropdown-toggle" href="product.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">Product</a>
+                <a class="nav-link dropdown-toggle amenu" href="product.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">Product</a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="product.php#product-bread">bread</a></li>
                   <li><a class="dropdown-item" href="product.php#product-danish">danish</a></li>
@@ -53,13 +53,13 @@ $all_product=$conn->query($sql);
                 </ul>
               </li>
               <li class="nav-item menu ">
-                <a class="nav-link" href="about-us.php">About US</a>
+                <a class="nav-link amenu" href="about-us.php">About US</a>
               </li>
               <li class="nav-item menu ">
-                <a class="nav-link " aria-disabled="true">Outlet</a>
+                <a class="nav-link amenu" href="outlet.php" aria-disabled="true">Outlet</a>
               </li>
               <li class="nav-item menu ">
-                <a class="nav-link " aria-disabled="true" >SHOP NOW</a>
+                <a href="../function/handlecart.php" class="nav-link shop-bag" aria-disabled="true" ><img style="width:25px;" src="../img/shop-bag.png" alt=""></a>
               </li>
               <li class=" nav-item menu-except d-flex">
                 <a class="nav-link medsos-icon " aria-disabled="true" ><img class="medsos-icon-img" src="../img/youtube-icon.png" alt="yt"></a>
@@ -350,35 +350,35 @@ $all_product=$conn->query($sql);
               <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
               <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Product</h5>
               <p class="mb-0"> 
-                <a href="product.php#product-bread" class="text" style="text-decoration:none; color:black; font-size:large">The Bread</a>
+                <a href="product.php#product-bread" class="text footer-menu" style="text-decoration:none; color:white; font-size:large">The Bread</a>
               </p>
               <p class="mb-0"> 
-                <a href="product.php#product-danish" class="text" style="text-decoration:none;color:black;font-size:large">Amazing Danish</a>
+                <a href="product.php#product-danish" class="text footer-menu" style="text-decoration:none;color:white;font-size:large">Amazing Danish</a>
               </p>
               <p class="mb-0"> 
-                <a href="product.php#product-cakes" class="text" style="text-decoration:none;color:black;font-size:large">Great Cakes</a>
+                <a href="product.php#product-cakes" class="text footer-menu" style="text-decoration:none;color:white;font-size:large">Great Cakes</a>
               </p>
               <p class="mb-0"> 
-                <a href="product.php#product-toast" class="text" style="text-decoration:none;color:black;font-size:large">Toasty Toast</a>
+                <a href="product.php#product-toast" class="text footer-menu" style="text-decoration:none;color:white;font-size:large">Toasty Toast</a>
               </p>
               <p class="mb-0"> 
-                <a href="product.php#product-hampers" class="text" style="text-decoration:none;color:black;font-size:large">Make your Hampers</a>
+                <a href="product.php#product-hampers" class="text footer-menu" style="text-decoration:none;color:white;font-size:large">Make your Hampers</a>
               </p>
               <p class="mb-0"> 
-                <a href="product.php#product-traditional" class="text" style="text-decoration:none;color:black;font-size:large">Traditional cakes</a>
+                <a href="product.php#product-traditional" class="text footer-menu" style="text-decoration:none;color:white;font-size:large">Traditional cakes</a>
               </p>
               <p class="mb-0"> 
-                <a href="product.php#product-cookies" class="text" style="text-decoration:none;color:black;font-size:large">Want a Cookies</a>
+                <a href="product.php#product-cookies" class="text footer-menu" style="text-decoration:none;color:white;font-size:large">Want a Cookies</a>
               </p>
               </div>
 
               <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
               <h5 class="text-uppercase mb-4 font-weight-bold text-warning">About</h5>
               <p class="mb-0"> 
-                <a href="" class="text-white" style="text-decoration:none;">About Us</a>
+                <a href="about-us.php" class="text-white" style="text-decoration:none;">About Us</a>
               </p>
               <p class="mb-0"> 
-                <a href="" class="text-white" style="text-decoration:none;">Location</a>
+                <a href="outlet.php" class="text-white" style="text-decoration:none;">Location</a>
               </p>
               <p class="mb-0"> 
                 <a href="" class="text-white" style="text-decoration:none;">Contact Us</a>
@@ -389,7 +389,9 @@ $all_product=$conn->query($sql);
               <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
               <h5 class="text-uppercase mb-2 font-weight-bold text-warning">Order online,pick it up in store & enjoy</h5>
               <div class="choose-store">
+                <a href="outlet.php" style="color:maroon;">
                 Choose your store
+                </a>
               </div>
              
               </div>
