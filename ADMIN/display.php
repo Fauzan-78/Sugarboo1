@@ -1,11 +1,28 @@
 <?php
 require_once '../database/connection.php';
+session_start(); 
+if(!isset($_SESSION['session_username'])) { 
+  echo "<p align='center'>Want to login again"; 
+  echo "<a href='login.php'>Click Here to Login</a></p>";
+} else{
 
 
 
 
 
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../css/display.css" />
+    <title>Document</title>
+</head>
+<body>
+
 
 
 
@@ -29,10 +46,11 @@ require_once '../database/connection.php';
           </a>
           <div class="navlistadmin">
             <a class="navlistadmina" href="uploads.php">UPLOAD</a>
-            <a class="navlistadmina" href="display.php">VIEW LIST</a>
+            <a class="navlistadmina" href="display.php">PRODUCT LIST</a>
+            <a class="navlistadmina" href="display_transaction.php">TRANSACTION LIST</a>
           </div>
           <div class="exitadmin">
-            <a href="../CLIENT/indexs.php">EXIT ADMIN</a>
+            <a href="../ADMIN/logout.php">EXIT ADMIN</a>
           </div>
         </div>
       </nav>
@@ -52,6 +70,7 @@ require_once '../database/connection.php';
       <th scope="col">Product Name</th>
       <th scope="col">Product Category</th>
       <th scope="col">Price</th>
+      <th scope="col">Price After Discount</th>
       <th scope="col">Discount</th>
       <th scope="col">Keterangan</th>
       <th scope="col">Operations</th>
@@ -68,7 +87,8 @@ require_once '../database/connection.php';
             $product_image = $row['product_image'];
             $product_name = $row['product_name'];
             $product_category = $row['product_category'];
-            $price= number_format($row['price'],2,",",".");
+            $price= $row['price'];
+            $price_after_discount= $row['price_after_discount'];
             $discount = $row['discount'];
             $keterangan = $row['keterangan'];
     ?>
@@ -77,8 +97,9 @@ require_once '../database/connection.php';
       <td><img src="<?php echo $product_image; ?>" alt="" style="width:100px;"></td>
       <td><?php echo $product_name;?></td>
       <td><?php echo $product_category;?></td>
-      <td><?php echo $price; ?></td>
-      <td><?php echo $discount . "%";?></td>
+      <td>Rp <?php echo $price; ?></td>
+      <td>Rp <?php echo $price_after_discount; ?></td>
+      <td><?php echo $discount;?></td>
       <td><?php echo $keterangan; ?></td>
       <td>
         <button class="btn btn-primary button-edit-product"><a style="color:white;text-decoration:none;" href="update.php?updateid=<?php echo  $product_id;?>">Edit</a></button>
@@ -130,5 +151,10 @@ require_once '../database/connection.php';
   const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
   const popoverList = [...popoverTriggerList].map((popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl));
 </script>
+
+<?php
+}
+
+?>
 </body>
 </html>

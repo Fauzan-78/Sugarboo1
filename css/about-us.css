@@ -178,3 +178,28 @@ h2#galery {
   color: maroon;
   font-weight: bolder;
 }
+
+.team{
+  margin: 0px 20px 0px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+
+.team .teamprofile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.team .teamprofile img{
+  width: 2in;
+  border-radius: 60px;
+  display: flex;
+  justify-content: center;
+}

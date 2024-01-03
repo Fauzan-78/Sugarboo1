@@ -2,12 +2,20 @@
 
 require_once '../database/connection.php';
 
+session_start(); 
+if(!isset($_SESSION['session_username'])) { 
+  echo "<p align='center'>Want to login again"; 
+  echo "<a href='login.php'>Click Here to Login</a></p>";
+} else{
+
 if(isset($_POST["submit"])){
     // echo "<script>alert('submitted')</script>";
     $productname = $_POST["productname"];
     $productcategory = $_POST["productcategory"];
     $price = $_POST["price"];
+    $price_discount = $_POST["price_after_discount"];
     $discount = $_POST["discount"];
+    $keterangan = $_POST["keterangan"];
 
 
 //untuk upload foto
@@ -44,7 +52,7 @@ if($upload_ok==0){
 }else{
     if($productname != "" && $price != ""){
         move_uploaded_file($_FILES["imageUpload"]["tmp_name"],$upload_file);
-        $sql = "INSERT INTO product(product_name,product_category,price,discount,product_image) VALUES('$productname','$productcategory',$price,$discount,'$product_image') ";
+        $sql = "INSERT INTO product(product_name,product_category,price,price_after_discount,discount,product_image,keterangan) VALUES('$productname','$productcategory',$price,$price_discount, $discount,'$product_image','$keterangan') ";
 
         if($conn->query($sql)==TRUE){
             echo  "<script>alert('your product upload to database')</script>";
@@ -65,16 +73,17 @@ if($upload_ok==0){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <title>Document</title>
     <link rel="stylesheet" href="../css/upload.css">
-    
 </head>
 <body>
-    <!-- NAVBAR ADMIN -->
-    <section id="navigasi">
+
+
+ <!-- NAVBAR ADMIN -->
+ <section id="navigasi">
       <nav class="navbaradmin">
         <div class="navbaradminmenu">
           <a href="" class="navbaradminpic">
@@ -82,16 +91,16 @@ if($upload_ok==0){
           </a>
           <div class="navlistadmin">
             <a class="navlistadmina" href="uploads.php">UPLOAD</a>
-            <a class="navlistadmina" href="display.php">VIEW LIST</a>
+            <a class="navlistadmina" href="display.php">PRODUCT LIST</a>
+            <a class="navlistadmina" href="display_transaction.php">TRANSACTION LIST</a>
           </div>
           <div class="exitadmin">
-            <a href="../CLIENT/indexs.php">EXIT ADMIN</a>
+          <a href="../ADMIN/logout.php" style="text-decoration: none;">EXIT ADMIN</a>
           </div>
         </div>
       </nav>
     </section>
     <!-- END OF NAVBAR ADMIN -->
-
     <?php
     // include_once "header.php";
     #include berarti memasukkan, artinya kita memasukkan  file kedalam dokumen kita, file tersebut bisa apa saja, 
@@ -113,7 +122,9 @@ if($upload_ok==0){
                 <option value="Promo">Promo</option>
             </select>
             <input type="number" name="price" id="price" placeholder="Product Price" required>
+            <input type="number" name="price_after_discount" id="price_after_discount" placeholder="Product Price After Discount" required>
             <input type="number" name="discount" id="discount" placeholder="Product Discount">
+            <input type="text" name="keterangan" id="keterangan" placeholder="keterangan">
             <input type="file" name="imageUpload" id="imageUpload" required hidden>
             <button id="choose" onclick="upload();">Choose Image</button>
             <input type="submit" value="Upload" name="submit">
@@ -144,3 +155,9 @@ if($upload_ok==0){
     </script>
 </body>
 </html>
+
+<?php
+
+    }
+
+    ?>

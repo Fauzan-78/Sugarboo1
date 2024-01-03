@@ -135,13 +135,13 @@ $all_product=$conn->query($sql);
 
   <section class="navbar-product" >
       <div>
-        <a class="link-p" href="#product-bread">Bread</a>
-        <a class="link-p" href="#product-cakes">Cakes</a>
-        <a class="link-p" href="#product-danish">Danish</a>
-        <a class="link-p" href="#product-cookies">Cookies</a>
-        <a class="link-p" href="#product-hampers">Hampers</a>
-        <a class="link-p" href="#product-toast">Toast</a>
-        <a class="link-p" href="#product-traditional">Traditional</a>
+        <a class="link-p" href="#bread">Bread</a>
+        <a class="link-p" href="#cakes">Cakes</a>
+        <a class="link-p" href="#danish">Danish</a>
+        <a class="link-p" href="#cookies">Cookies</a>
+        <a class="link-p" href="#hampers">Hampers</a>
+        <a class="link-p" href="#toast">Toast</a>
+        <a class="link-p" href="#traditional">Traditional</a>
       </div>
     </div>
   </section>
@@ -152,8 +152,6 @@ $all_product=$conn->query($sql);
 
     <!-- BREAD -->
     <section id="product-bread" class="">
-    <br>
-    <br>
       <h2 style="text-align: left; color: maroon; font-weight:bold; padding-left: 50px; padding-top: 40px;" id="bread">BREAD</h2>
       <div class="product-showcase-c">
           <div class="product-showcase">
@@ -170,11 +168,7 @@ $all_product=$conn->query($sql);
               <!-- img-container -->
               <div class="p-img-container">
                 <div class="p-img">
-                <button type="button" class="btn "
-                    data-bs-toggle="popover" data-bs-placement="right"
-                    data-bs-custom-class="custom-popover"
-                    data-bs-title=" <?php echo $row["product_name"]; ?>"
-                    data-bs-content="<?php echo $row["keterangan"];?>">
+                <button type="button" class="btn"  data-bs-custom-class="custom-popover" data-bs-toggle="popover"  data-bs-placement="right" data-bs-title="<?php echo $row["product_name"];?>" data-bs-content =" <?php echo $row["keterangan"];?> " >
                     <img src="<?php echo $row["product_image"];?>" class="p-img-front gambar-depan" alt="<?php echo $row["product_name"]; ?> image" />
                       <!-- <img src="/aset/bankecil2.png" class="p-img-back" alt="Back" /> -->
                   </button>
@@ -193,7 +187,7 @@ $all_product=$conn->query($sql);
 
                 <!-- price-buy -->
                 <div class="price-buy">
-                  <span class="p-price">Rp. <?php echo number_format($row["price"],2,",",".");?></span>
+                  <span class="p-price">Rp. <?php echo $row["price"]; ?></span>
                   <button type="button" style="border:none ;" class="btn  passingID" data-id="<?= $row["product_image"]; ?>" data-id2="<?= $row["product_id"]; ?>" data-id3="<?= $row["product_name"]; ?>" data-id4="<?= $row["keterangan"]; ?>" data-id5="<?= $row["price"]; ?>">
                   <a href="#" class="p-btn-buy">Add To Cart</a>
                   </button>
@@ -212,357 +206,339 @@ $all_product=$conn->query($sql);
      
 
     <!-- CAKES -->
-    <section id="product-cakes" class="">
-    <br>
-    <br>
+    <section id="product-cakes">
       <h2 style="text-align: left; color: maroon; font-weight:bold; padding-left: 50px; padding-top: 40px;" id="cakes">CAKES</h2>
-      <div class="product-showcase-c">
+      <div class=".product-showcase-c">
           <div class="product-showcase">
 
           <?php
               $sql = "SELECT * FROM product WHERE product_category='Cakes'";
-              $bread=$conn->query($sql);
-              while($row = mysqli_fetch_assoc($bread)){
+              $cake=$conn->query($sql);
+              while($row = mysqli_fetch_assoc($cake)){
           ?>
-          
-              <!-- product box -->
-            <div class="product-box">
+           <!-- product box -->
+           <div class="product-box">
              
-              <!-- img-container -->
-              <div class="p-img-container">
-                <div class="p-img">
-                <button type="button" class="btn "
-                    data-bs-toggle="popover" data-bs-placement="right"
-                    data-bs-custom-class="custom-popover"
-                    data-bs-title=" <?php echo $row["product_name"]; ?>"
-                    data-bs-content="<?php echo $row["keterangan"];?>">
-                    <img src="<?php echo $row["product_image"];?>" class="p-img-front gambar-depan" alt="<?php echo $row["product_name"]; ?> image" />
-                      <!-- <img src="/aset/bankecil2.png" class="p-img-back" alt="Back" /> -->
-                  </button>
-                </div>
-              </div>
+             <!-- img-container -->
+             <div class="p-img-container">
+               <div class="p-img">
+               <button type="button" class="btn "
+                   data-bs-toggle="popover" data-bs-placement="right"
+                   data-bs-custom-class="custom-popover"
+                   data-bs-title=" <?php echo $row["product_name"]; ?>"
+                   data-bs-content=" <?php echo $row["keterangan"];?> ">
+                   <img src="<?php echo $row["product_image"];?>" class="p-img-front gambar-depan" alt="<?php echo $row["product_name"]; ?> image" />
+                     <!-- <img src="/aset/bankecil2.png" class="p-img-back" alt="Back" /> -->
+                 </button>
+               </div>
+             </div>
 
-              <!-- Text -->
-              <div class="p-box-text">
-                <!-- category -->
-                <div class="product-category">
-                  <span><?php echo $row["product_category"]; ?></span>
-                </div>
+             <!-- Text -->
+             <div class="p-box-text">
+               <!-- category -->
+               <div class="product-category">
+                 <span><?php echo $row["product_category"]; ?></span>
+               </div>
 
-                <!-- Title -->
-                <a href="#" class="product-title"> <?php echo $row["product_name"]; ?></a>
+               <!-- Title -->
+               <a href="#" class="product-title"> <?php echo $row["product_name"]; ?></a>
 
-                <!-- price-buy -->
-                <div class="price-buy">
-                  <span class="p-price">Rp. <?php echo number_format($row["price"],2,",",".");?></span>
-                  <button type="button" style="border:none ;" class="btn  passingID" data-id="<?= $row["product_image"]; ?>" data-id2="<?= $row["product_id"]; ?>" data-id3="<?= $row["product_name"]; ?>" data-id4="<?= $row["keterangan"]; ?>" data-id5="<?= $row["price"]; ?>">
-                  <a href="#" class="p-btn-buy">Add To Cart</a>
-                  </button>
-                </div>
-              </div>
-            </div>
+               <!-- price-buy -->
+               <div class="price-buy">
+                 <span class="p-price">Rp. <?php echo $row["price"]; ?></span>
+                 <button type="button" style="border:none ;" class="btn  passingID" data-id="<?= $row["product_image"]; ?>" data-id2="<?= $row["product_id"]; ?>" data-id3="<?= $row["product_name"]; ?>" data-id4="<?= $row["keterangan"]; ?>" data-id5="<?= $row["price"]; ?>">
+                 <a href="#" class="p-btn-buy">Add To Cart</a>
+                 </button>
+               </div>
+             </div>
+           </div>
+             
           <?php }  ?>
           </div>
           <!-- <button aria-label="Previous" class="glider-prev d-none d-lg-block">«</button>
           <button aria-label="Next" class="glider-next d-none d-lg-block">»</button> 
           <div role="tablist" class="dots"></div> -->
         </div>
-
         </section>
 
-
     <!-- DANISH -->
-    <section id="product-danish" class="">
-    <br>
-    <br>
-      <h2 style="text-align: left; color: maroon; font-weight:bold; padding-left: 50px; padding-top: 40px;" id="danish">DANISH</h2>
-      <div class="product-showcase-c">
+    <section id="product-danish">
+    <h2 style="text-align: left; color: maroon; font-weight:bold; padding-left: 50px; padding-top: 40px;" id="danish">DANISH</h2>
+      <div class=".product-showcase-c">
           <div class="product-showcase">
 
           <?php
               $sql = "SELECT * FROM product WHERE product_category='Danish'";
-              $bread=$conn->query($sql);
-              while($row = mysqli_fetch_assoc($bread)){
+              $danish=$conn->query($sql);
+              while($row = mysqli_fetch_assoc($danish)){
           ?>
           
               <!-- product box -->
             <div class="product-box">
              
-              <!-- img-container -->
-              <div class="p-img-container">
-                <div class="p-img">
-                <button type="button" class="btn "
-                    data-bs-toggle="popover" data-bs-placement="right"
-                    data-bs-custom-class="custom-popover"
-                    data-bs-title=" <?php echo $row["product_name"]; ?>"
-                    data-bs-content="<?php echo $row["keterangan"];?>">
-                    <img src="<?php echo $row["product_image"];?>" class="p-img-front gambar-depan" alt="<?php echo $row["product_name"]; ?> image" />
-                      <!-- <img src="/aset/bankecil2.png" class="p-img-back" alt="Back" /> -->
-                  </button>
-                </div>
-              </div>
+             <!-- img-container -->
+             <div class="p-img-container">
+               <div class="p-img">
+               <button type="button" class="btn "
+                   data-bs-toggle="popover" data-bs-placement="right"
+                   data-bs-custom-class="custom-popover"
+                   data-bs-title=" <?php echo $row["product_name"]; ?> "
+                   data-bs-content=" <?php echo $row["keterangan"];?> ">
+                   <img src="<?php echo $row["product_image"];?>" class="p-img-front gambar-depan" alt="<?php echo $row["product_name"]; ?> image" />
+                     <!-- <img src="/aset/bankecil2.png" class="p-img-back" alt="Back" /> -->
+                 </button>
+               </div>
+             </div>
 
-              <!-- Text -->
-              <div class="p-box-text">
-                <!-- category -->
-                <div class="product-category">
-                  <span><?php echo $row["product_category"]; ?></span>
-                </div>
+             <!-- Text -->
+             <div class="p-box-text">
+               <!-- category -->
+               <div class="product-category">
+                 <span><?php echo $row["product_category"]; ?></span>
+               </div>
 
-                <!-- Title -->
-                <a href="#" class="product-title"> <?php echo $row["product_name"]; ?></a>
+               <!-- Title -->
+               <a href="#" class="product-title"> <?php echo $row["product_name"]; ?></a>
 
-                <!-- price-buy -->
-                <div class="price-buy">
-                  <span class="p-price">Rp. <?php echo number_format($row["price"],2,",",".");?></span>
-                  <button type="button" style="border:none ;" class="btn  passingID" data-id="<?= $row["product_image"]; ?>" data-id2="<?= $row["product_id"]; ?>" data-id3="<?= $row["product_name"]; ?>" data-id4="<?= $row["keterangan"]; ?>" data-id5="<?= $row["price"]; ?>">
-                  <a href="#" class="p-btn-buy">Add To Cart</a>
-                  </button>
-                </div>
-              </div>
-            </div>
+               <!-- price-buy -->
+               <div class="price-buy">
+                 <span class="p-price">Rp. <?php echo $row["price"]; ?></span>
+                 <button type="button" style="border:none ;" class="btn  passingID" data-id="<?= $row["product_image"]; ?>" data-id2="<?= $row["product_id"]; ?>" data-id3="<?= $row["product_name"]; ?>" data-id4="<?= $row["keterangan"]; ?>" data-id5="<?= $row["price"]; ?>">
+                 <a href="#" class="p-btn-buy">Add To Cart</a>
+                 </button>
+               </div>
+             </div>
+           </div>
           <?php }  ?>
           </div>
           <!-- <button aria-label="Previous" class="glider-prev d-none d-lg-block">«</button>
           <button aria-label="Next" class="glider-next d-none d-lg-block">»</button> 
           <div role="tablist" class="dots"></div> -->
         </div>
-
         </section>
 
     <!-- COOKIES -->
-    <section id="product-cookies" class="">
-    <br>
-    <br>
+    <section id="product-cookies">
       <h2 style="text-align: left; color: maroon; font-weight:bold; padding-left: 50px; padding-top: 40px;" id="cookies">COOKIES</h2>
-      <div class="product-showcase-c">
+      <div class=".product-showcase-c">
           <div class="product-showcase">
 
           <?php
               $sql = "SELECT * FROM product WHERE product_category='Cookies'";
-              $bread=$conn->query($sql);
-              while($row = mysqli_fetch_assoc($bread)){
+              $cookies=$conn->query($sql);
+              while($row = mysqli_fetch_assoc($cookies)){
           ?>
           
-              <!-- product box -->
-            <div class="product-box">
+             <!-- product box -->
+             <div class="product-box">
              
-              <!-- img-container -->
-              <div class="p-img-container">
-                <div class="p-img">
-                <button type="button" class="btn "
-                    data-bs-toggle="popover" data-bs-placement="right"
-                    data-bs-custom-class="custom-popover"
-                    data-bs-title=" <?php echo $row["product_name"]; ?>"
-                    data-bs-content="<?php echo $row["keterangan"];?>">
-                    <img src="<?php echo $row["product_image"];?>" class="p-img-front gambar-depan" alt="<?php echo $row["product_name"]; ?> image" />
-                      <!-- <img src="/aset/bankecil2.png" class="p-img-back" alt="Back" /> -->
-                  </button>
-                </div>
-              </div>
+             <!-- img-container -->
+             <div class="p-img-container">
+               <div class="p-img">
+               <button type="button" class="btn "
+                   data-bs-toggle="popover" data-bs-placement="right"
+                   data-bs-custom-class="custom-popover"
+                   data-bs-title=" <?php echo $row["product_name"]; ?>"
+                   data-bs-content=" <?php echo $row["keterangan"];?> ">
+                   <img src="<?php echo $row["product_image"];?>" class="p-img-front gambar-depan" alt="<?php echo $row["product_name"]; ?> image" />
+                     <!-- <img src="/aset/bankecil2.png" class="p-img-back" alt="Back" /> -->
+                 </button>
+               </div>
+             </div>
 
-              <!-- Text -->
-              <div class="p-box-text">
-                <!-- category -->
-                <div class="product-category">
-                  <span><?php echo $row["product_category"]; ?></span>
-                </div>
+             <!-- Text -->
+             <div class="p-box-text">
+               <!-- category -->
+               <div class="product-category">
+                 <span><?php echo $row["product_category"]; ?></span>
+               </div>
 
-                <!-- Title -->
-                <a href="#" class="product-title"> <?php echo $row["product_name"]; ?></a>
+               <!-- Title -->
+               <a href="#" class="product-title"> <?php echo $row["product_name"]; ?></a>
 
-                <!-- price-buy -->
-                <div class="price-buy">
-                  <span class="p-price">Rp. <?php echo number_format($row["price"],2,",",".");?></span>
-                  <button type="button" style="border:none ;" class="btn  passingID" data-id="<?= $row["product_image"]; ?>" data-id2="<?= $row["product_id"]; ?>" data-id3="<?= $row["product_name"]; ?>" data-id4="<?= $row["keterangan"]; ?>" data-id5="<?= $row["price"]; ?>">
-                  <a href="#" class="p-btn-buy">Add To Cart</a>
-                  </button>
-                </div>
-              </div>
-            </div>
+               <!-- price-buy -->
+               <div class="price-buy">
+                 <span class="p-price">Rp. <?php echo $row["price"]; ?></span>
+                 <button type="button" style="border:none ;" class="btn  passingID" data-id="<?= $row["product_image"]; ?>" data-id2="<?= $row["product_id"]; ?>" data-id3="<?= $row["product_name"]; ?>" data-id4="<?= $row["keterangan"]; ?>" data-id5="<?= $row["price"]; ?>">
+                 <a href="#" class="p-btn-buy">Add To Cart</a>
+                 </button>
+               </div>
+             </div>
+           </div>
           <?php }  ?>
           </div>
           <!-- <button aria-label="Previous" class="glider-prev d-none d-lg-block">«</button>
           <button aria-label="Next" class="glider-next d-none d-lg-block">»</button> 
           <div role="tablist" class="dots"></div> -->
         </div>
-
         </section>
 
+        <section id="product-hampers">
     <!-- Hampers -->
-    <section id="product-hampers" class="">
-    <br>
-    <br>
       <h2 style="text-align: left; color: maroon; font-weight:bold; padding-left: 50px; padding-top: 40px;" id="hampers">HAMPERS</h2>
-      <div class="product-showcase-c">
+      <div class=".product-showcase-c">
           <div class="product-showcase">
 
           <?php
               $sql = "SELECT * FROM product WHERE product_category='Hampers'";
-              $bread=$conn->query($sql);
-              while($row = mysqli_fetch_assoc($bread)){
+              $hampers=$conn->query($sql);
+              while($row = mysqli_fetch_assoc($hampers)){
           ?>
           
-              <!-- product box -->
-            <div class="product-box">
+             <!-- product box -->
+             <div class="product-box">
              
-              <!-- img-container -->
-              <div class="p-img-container">
-                <div class="p-img">
-                <button type="button" class="btn "
-                    data-bs-toggle="popover" data-bs-placement="right"
-                    data-bs-custom-class="custom-popover"
-                    data-bs-title=" <?php echo $row["product_name"]; ?>"
-                    data-bs-content="<?php echo $row["keterangan"];?>">
-                    <img src="<?php echo $row["product_image"];?>" class="p-img-front gambar-depan" alt="<?php echo $row["product_name"]; ?> image" />
-                      <!-- <img src="/aset/bankecil2.png" class="p-img-back" alt="Back" /> -->
-                  </button>
-                </div>
-              </div>
+             <!-- img-container -->
+             <div class="p-img-container">
+               <div class="p-img">
+               <button type="button" class="btn "
+                   data-bs-toggle="popover" data-bs-placement="right"
+                   data-bs-custom-class="custom-popover"
+                   data-bs-title=" <?php echo $row["product_name"]; ?>"
+                   data-bs-content=" <?php echo $row["keterangan"];?> ">
+                   <img src="<?php echo $row["product_image"];?>" class="p-img-front gambar-depan" alt="<?php echo $row["product_name"]; ?> image" />
+                     <!-- <img src="/aset/bankecil2.png" class="p-img-back" alt="Back" /> -->
+                 </button>
+               </div>
+             </div>
 
-              <!-- Text -->
-              <div class="p-box-text">
-                <!-- category -->
-                <div class="product-category">
-                  <span><?php echo $row["product_category"]; ?></span>
-                </div>
+             <!-- Text -->
+             <div class="p-box-text">
+               <!-- category -->
+               <div class="product-category">
+                 <span><?php echo $row["product_category"]; ?></span>
+               </div>
 
-                <!-- Title -->
-                <a href="#" class="product-title"> <?php echo $row["product_name"]; ?></a>
+               <!-- Title -->
+               <a href="#" class="product-title"> <?php echo $row["product_name"]; ?></a>
 
-                <!-- price-buy -->
-                <div class="price-buy">
-                  <span class="p-price">Rp. <?php echo number_format($row["price"],2,",",".");?></span>
-                  <button type="button" style="border:none ;" class="btn  passingID" data-id="<?= $row["product_image"]; ?>" data-id2="<?= $row["product_id"]; ?>" data-id3="<?= $row["product_name"]; ?>" data-id4="<?= $row["keterangan"]; ?>" data-id5="<?= $row["price"]; ?>">
-                  <a href="#" class="p-btn-buy">Add To Cart</a>
-                  </button>
-                </div>
-              </div>
-            </div>
+               <!-- price-buy -->
+               <div class="price-buy">
+                 <span class="p-price">Rp. <?php echo $row["price"]; ?></span>
+                 <button type="button" style="border:none ;" class="btn  passingID" data-id="<?= $row["product_image"]; ?>" data-id2="<?= $row["product_id"]; ?>" data-id3="<?= $row["product_name"]; ?>" data-id4="<?= $row["keterangan"]; ?>" data-id5="<?= $row["price"]; ?>">
+                 <a href="#" class="p-btn-buy">Add To Cart</a>
+                 </button>
+               </div>
+             </div>
+           </div>
           <?php }  ?>
           </div>
           <!-- <button aria-label="Previous" class="glider-prev d-none d-lg-block">«</button>
           <button aria-label="Next" class="glider-next d-none d-lg-block">»</button> 
           <div role="tablist" class="dots"></div> -->
         </div>
-
         </section>
+
     <!-- TOAST -->
-    <section id="product-toast" class="">
-    <br>
-    <br>
+    <section id="product-toast">
       <h2 style="text-align: left; color: maroon; font-weight:bold; padding-left: 50px; padding-top: 40px;" id="toast">TOAST</h2>
-      <div class="product-showcase-c">
+      <div class=".product-showcase-c">
           <div class="product-showcase">
 
           <?php
               $sql = "SELECT * FROM product WHERE product_category='Toast'";
-              $bread=$conn->query($sql);
-              while($row = mysqli_fetch_assoc($bread)){
+              $toast=$conn->query($sql);
+              while($row = mysqli_fetch_assoc($toast)){
           ?>
           
-              <!-- product box -->
+               <!-- product box -->
             <div class="product-box">
              
-              <!-- img-container -->
-              <div class="p-img-container">
-                <div class="p-img">
-                <button type="button" class="btn "
-                    data-bs-toggle="popover" data-bs-placement="right"
-                    data-bs-custom-class="custom-popover"
-                    data-bs-title=" <?php echo $row["product_name"]; ?>"
-                    data-bs-content="<?php echo $row["keterangan"];?>">
-                    <img src="<?php echo $row["product_image"];?>" class="p-img-front gambar-depan" alt="<?php echo $row["product_name"]; ?> image" />
-                      <!-- <img src="/aset/bankecil2.png" class="p-img-back" alt="Back" /> -->
-                  </button>
-                </div>
-              </div>
+             <!-- img-container -->
+             <div class="p-img-container">
+               <div class="p-img">
+               <button type="button" class="btn "
+                   data-bs-toggle="popover" data-bs-placement="right"
+                   data-bs-custom-class="custom-popover"
+                   data-bs-title=" <?php echo $row["product_name"]; ?>"
+                   data-bs-content=" <?php echo $row["keterangan"];?> ">
+                   <img src="<?php echo $row["product_image"];?>" class="p-img-front gambar-depan" alt="<?php echo $row["product_name"]; ?> image" />
+                     <!-- <img src="/aset/bankecil2.png" class="p-img-back" alt="Back" /> -->
+                 </button>
+               </div>
+             </div>
 
-              <!-- Text -->
-              <div class="p-box-text">
-                <!-- category -->
-                <div class="product-category">
-                  <span><?php echo $row["product_category"]; ?></span>
-                </div>
+             <!-- Text -->
+             <div class="p-box-text">
+               <!-- category -->
+               <div class="product-category">
+                 <span><?php echo $row["product_category"]; ?></span>
+               </div>
 
-                <!-- Title -->
-                <a href="#" class="product-title"> <?php echo $row["product_name"]; ?></a>
+               <!-- Title -->
+               <a href="#" class="product-title"> <?php echo $row["product_name"]; ?></a>
 
-                <!-- price-buy -->
-                <div class="price-buy">
-                  <span class="p-price">Rp. <?php echo number_format($row["price"],2,",",".");?></span>
-                  <button type="button" style="border:none ;" class="btn  passingID" data-id="<?= $row["product_image"]; ?>" data-id2="<?= $row["product_id"]; ?>" data-id3="<?= $row["product_name"]; ?>" data-id4="<?= $row["keterangan"]; ?>" data-id5="<?= $row["price"]; ?>">
-                  <a href="#" class="p-btn-buy">Add To Cart</a>
-                  </button>
-                </div>
-              </div>
-            </div>
+               <!-- price-buy -->
+               <div class="price-buy">
+                 <span class="p-price">Rp. <?php echo $row["price"]; ?></span>
+                 <button type="button" style="border:none ;" class="btn  passingID" data-id="<?= $row["product_image"]; ?>" data-id2="<?= $row["product_id"]; ?>" data-id3="<?= $row["product_name"]; ?>" data-id4="<?= $row["keterangan"]; ?>" data-id5="<?= $row["price"]; ?>">
+                 <a href="#" class="p-btn-buy">Add To Cart</a>
+                 </button>
+               </div>
+             </div>
+           </div>
           <?php }  ?>
           </div>
           <!-- <button aria-label="Previous" class="glider-prev d-none d-lg-block">«</button>
           <button aria-label="Next" class="glider-next d-none d-lg-block">»</button> 
           <div role="tablist" class="dots"></div> -->
         </div>
-
         </section>
 
     <!-- TRADITIONAL -->
-    <section id="product-traditional" class="">
-    <br>
-    <br>
-      <h2 style="text-align: left; color: maroon; font-weight:bold; padding-left: 50px; padding-top: 40px;" id="Traditional">TRADITIONAL</h2>
-      <div class="product-showcase-c">
+    <section id="product-traditional">
+      <h2 style="text-align: left; color: maroon; font-weight:bold; padding-left: 50px; padding-top: 40px;" id="traditional">TRADITIONAL</h2>
+      <div class=".product-showcase-c">
           <div class="product-showcase">
 
           <?php
               $sql = "SELECT * FROM product WHERE product_category='Traditional'";
-              $bread=$conn->query($sql);
-              while($row = mysqli_fetch_assoc($bread)){
+              $traditional=$conn->query($sql);
+              while($row = mysqli_fetch_assoc($traditional)){
           ?>
           
               <!-- product box -->
             <div class="product-box">
              
-              <!-- img-container -->
-              <div class="p-img-container">
-                <div class="p-img">
-                <button type="button" class="btn "
-                    data-bs-toggle="popover" data-bs-placement="right"
-                    data-bs-custom-class="custom-popover"
-                    data-bs-title=" <?php echo $row["product_name"]; ?>"
-                    data-bs-content="<?php echo $row["keterangan"];?>">
-                    <img src="<?php echo $row["product_image"];?>" class="p-img-front gambar-depan" alt="<?php echo $row["product_name"]; ?> image" />
-                      <!-- <img src="/aset/bankecil2.png" class="p-img-back" alt="Back" /> -->
-                  </button>
-                </div>
-              </div>
+             <!-- img-container -->
+             <div class="p-img-container">
+               <div class="p-img">
+               <button type="button" class="btn "
+                   data-bs-toggle="popover" data-bs-placement="right"
+                   data-bs-custom-class="custom-popover"
+                   data-bs-title=" <?php echo $row["product_name"]; ?>"
+                   data-bs-content=" <?php echo $row["keterangan"];?> ">
+                   <img src="<?php echo $row["product_image"];?>" class="p-img-front gambar-depan" alt="<?php echo $row["product_name"]; ?> image" />
+                     <!-- <img src="/aset/bankecil2.png" class="p-img-back" alt="Back" /> -->
+                 </button>
+               </div>
+             </div>
 
-              <!-- Text -->
-              <div class="p-box-text">
-                <!-- category -->
-                <div class="product-category">
-                  <span><?php echo $row["product_category"]; ?></span>
-                </div>
+             <!-- Text -->
+             <div class="p-box-text">
+               <!-- category -->
+               <div class="product-category">
+                 <span><?php echo $row["product_category"]; ?></span>
+               </div>
 
-                <!-- Title -->
-                <a href="#" class="product-title"> <?php echo $row["product_name"]; ?></a>
+               <!-- Title -->
+               <a href="#" class="product-title"> <?php echo $row["product_name"]; ?></a>
 
-                <!-- price-buy -->
-                <div class="price-buy">
-                  <span class="p-price">Rp. <?php echo number_format($row["price"],2,",",".");?></span>
-                  <button type="button" style="border:none ;" class="btn  passingID" data-id="<?= $row["product_image"]; ?>" data-id2="<?= $row["product_id"]; ?>" data-id3="<?= $row["product_name"]; ?>" data-id4="<?= $row["keterangan"]; ?>" data-id5="<?= $row["price"]; ?>">
-                  <a href="#" class="p-btn-buy">Add To Cart</a>
-                  </button>
-                </div>
-              </div>
-            </div>
+               <!-- price-buy -->
+               <div class="price-buy">
+                 <span class="p-price">Rp. <?php echo $row["price"]; ?></span>
+                 <button type="button" style="border:none ;" class="btn  passingID" data-id="<?= $row["product_image"]; ?>" data-id2="<?= $row["product_id"]; ?>" data-id3="<?= $row["product_name"]; ?>" data-id4="<?= $row["keterangan"]; ?>" data-id5="<?= $row["price"]; ?>">
+                 <a href="#" class="p-btn-buy">Add To Cart</a>
+                 </button>
+               </div>
+             </div>
+           </div>
           <?php }  ?>
           </div>
           <!-- <button aria-label="Previous" class="glider-prev d-none d-lg-block">«</button>
           <button aria-label="Next" class="glider-next d-none d-lg-block">»</button> 
           <div role="tablist" class="dots"></div> -->
         </div>
-
         </section>
 
 

@@ -260,20 +260,54 @@ $all_product=$conn->query($sql);
             </div>
         </div>
 
-        <br><br><br>
-        
+        <br><br>
+        <h2 id="galery">MEET OUR TEAM</h2>
+        <div class="divider" id="galery"></div>
+        <br>
+        <div class="team">
+            <div class="teamprofile">
+              <img src="../img/team/p1.png" alt="Foto Team">
+              <p>Abdurahman Aziz</p>
+              <br>
+            </div>
+            <div class="teamprofile">
+              <img src="../img/team/p2.png" alt="Foto Team">
+              <p>Eymir Nabil Makarim</p>
+              <br>
+            </div>
+            <div class="teamprofile">
+              <img src="../img/team/p3.png" alt="Foto Team">
+              <p>Jovan Vikesha Ramadhan</p>
+            </div>
+            <div class="teamprofile">
+              <img src="../img/team/p4.png" alt="Foto Team">
+              <p>Ibrahim Abdullah</p>
+              <br>
+            </div>
+            <div class="teamprofile">
+              <img src="../img/team/p1.png" alt="Foto Team">
+              <p>M. Fauzan Widakdo</p>
+              <br>
+            </div>
+            <div class="teamprofile">
+              <img src="../img/team/p5.png" alt="Foto Team">
+              <p>Muhammad Heru Redyanto</p>
+            </div>
+        </div>
+        <br>
+
         <h2 id="galery">GALERY</h2>
-        <div class="divider" id="galery"></div>\
+        <div class="divider" id="galery"></div>
         <br>
         <div class="Galery">
-            <img src="../img/galery/cakes.png" alt="White Cakes"></img>
-            <img src="../img/galery/shopE.jpg" alt="Warehouse"></img>
-            <img src="../img/galery/shopA.png" alt="Shop"></img>
-            <img src="../img/galery/hampers.png" alt="Hampers"></img>
-            <img src="../img/galery/cookies.png" alt="Cookies"></img>
-            <img src="../img/galery/staff.jpg" alt="Employee"></img>
-            <img src="../img/galery/food.jpg" alt="Table of Breads"></img>
-            <img src="../img/galery/food2.jpg" alt="Display Presentation"></img>
+            <img src="../img/bankecil1.png" alt="White Cakes"></img>
+            <img src="../img/toko1.jpg" alt="Warehouse"></img>
+            <img src="../img/toko2.jpeg" alt="Shop"></img>
+            <img src="../img/bankecil2.png" alt="Hampers"></img>
+            <img src="../img/jenis_produk/cookies.png" alt="Cookies"></img>
+            <img src="../img/acara kue.jpeg" alt="Employee"></img>
+            <img src="../img/sugarboo1.png" alt="Table of Breads"></img>
+            <img src="../img/bankecil1.png" alt="Display Presentation"></img>
         </div>
         <br><br><br>
     </body>

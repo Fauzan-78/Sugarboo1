@@ -1,46 +1,47 @@
 <?php
 session_start();
 include("../database/connection.php");
+
 if(isset($_POST['scope']))
 {
     if(isset($_SESSION['cart'])){
 
         $session_array_id = array_column($_SESSION['cart'],'prod_id' );
-        $a = $_GET['prod_id'];
-        echo $a;
-        if (!in_array($_GET['prod_id'], $session_array_id)){
-            $prod_id = $_POST['prod_id'];
-            $prod_qty = $_POST['prod_qty'];
-            $prod_price = $_POST['prod_price'];
-            $prod_img= $_POST['prod_img'];
-            $prod_name= $_POST['prod_name'];
-            $prod_total_price = $_POST['prod_total_price'];
-                $session_array = [
-                    'prod_id' => $prod_id,
-                    'prod_qty' => $prod_qty,
-                    'prod_price' => $prod_price,
-                    'prod_img' => $prod_img,
-                    'prod_name' => $prod_name,
-                    'prod_total_price' => $prod_total_price,
-                ];
+        $id_dicari = $_POST['prod_id'];
+        if (!in_array($id_dicari, $session_array_id)){
+          $prod_id = $_POST['prod_id'];
+          $prod_qty = $_POST['prod_qty'];
+          $prod_price = $_POST['prod_price'];
+          $prod_img= $_POST['prod_img'];
+          $prod_name= $_POST['prod_name'];
+          $prod_total_price = $_POST['prod_total_price'];
+              $session_array = [
+                  'prod_id' => $prod_id,
+                  'prod_qty' => $prod_qty,
+                  'prod_price' => $prod_price,
+                  'prod_img' => $prod_img,
+                  'prod_name' => $prod_name,
+                  'prod_total_price' => $prod_total_price,
+              ];
 
-                $_SESSION['cart'][]= $session_array;
-
-                
+              $_SESSION['cart'][]= $session_array;  
+      } else {
+        
+        $prod_qty = $_POST['prod_qty'];
+        $prod_total_price = $_POST['prod_total_price'];
+        foreach ($_SESSION['cart'] as $result => &$set)
+        {
+            if ($set['prod_id'] == $id_dicari)
+            {
+                $set['prod_qty'] += $prod_qty;
+                $set['prod_total_price'] += $prod_total_price;
+                break;
+            }
         }
-        // else{
-        //     $prod_qty = $_POST['prod_qty'];
-        //     $session_array = [
-               
-        //         'prod_qty' => $prod_qty,
-              
-        //     ];
-        //     $_SESSION['cart'][]= $session_array;
-        //     echo "ditemukan";
-        // }
-    }else{
 
-    
+
+      }
+  }else{
     $scope = $_POST['scope'];
     switch ($scope){
         case "add" :
@@ -60,32 +61,17 @@ if(isset($_POST['scope']))
                 ];
 
                 $_SESSION['cart'][]= $session_array;
-          
-                
-                
-            //     $cek_existing_cart = "SELECT * FROM carts where prod_id='$prod_id' ";
-            //     $cek_existing_cart_run = mysqli_query($conn, $cek_existing_cart);
-            //     if(mysqli_num_rows($cek_existing_cart_run)>0)
-            //     {
-            //         echo "existing";
-            //     }else{
-            //         $insert_query= "INSERT INTO carts(prod_id,prod_qty) VALUES('$prod_id','$prod_qty')";
-            //         $insert_query_run = mysqli_query($conn,$insert_query);
-
-            //     if($insert_query_run){
-            //         
-            //     }else{
-            //         echo 300;
-            //     }
-            // }
                 break;
-        
-            }
-            echo 201;
-    }
+
+  }
+  }
 } else{
-    echo 301;
+
+//   foreach($_SESSION['cart'] as $result) {
+//     echo $result['prod_id'],$result['prod_name'], '<br>';
+// }
 }
+
 // 
 
 global $total;
@@ -178,8 +164,8 @@ global $total;
                     <td><img class="gambar-produk" src="<?= $value['prod_img']?>"  ></td>
                     <td><?= $value['prod_name']?></td>
                     <td><?= $value['prod_qty']?></td>
-                    <td>Rp. <?= number_format($value['prod_price'],2,",",".")?></td>
-                    <td>Rp. <?= number_format($value['prod_total_price'],2,",",".")?></td>
+                    <td>Rp <?= $value['prod_price']?></td>
+                    <td>Rp <?= $value['prod_total_price']?></td>
                     <td>
                     <a>
                     <a class="a-button-remove" href='handlecart.php?action=remove&prod_id=<?=$value['prod_id']?>'> 
@@ -202,7 +188,7 @@ global $total;
 <tr>
                 <td colspan='3'></td>
                 <td style="background-color:yellow;"><b>Total Price</b></td>
-                <td style="background-color:yellow;font-size:larger;"><b>Rp. <?=number_format($total,2,",",".")?><b></td>
+                <td style="background-color:yellow;font-size:larger;"><b>Rp <?=number_format($total,2,",",".")?><b></td>
                 <tr>
 
 

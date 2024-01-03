@@ -17,6 +17,12 @@ if(isset($_POST["submit"])){
     $jenis_pengiriman = "kurir";
     $metode_pembayaran     = $_POST['pembayaran'];
 
+    if($nama == ""){
+      echo "<script>alert('Please fill all required fields!' )</script>" ;
+      exit();
+   
+    }
+
    //masukin identitas transaksi ke database id_transaksi
     $input1 = "INSERT INTO identitas_transaksi (nama, no_telp1, no_telp2, email,jenis_pengiriman,metode_bayar,total) VALUES ('$nama','$nohandphone1','$nohandphone2',' $email','$jenis_pengiriman',' $metode_pembayaran','$total')";
     if($result1 = mysqli_query($conn,$input1)){
@@ -83,7 +89,6 @@ if(isset($_POST["submit"])){
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
     <link rel="stylesheet" href="../css/payment.css" />
-    <script src="../js/date.js"></script>
     <title>Sugarboo</title>
 
     <!-- glider -->
@@ -150,7 +155,7 @@ if(isset($_POST["submit"])){
         <div class="pembayaran-konten">
       <div class= "informasi-pelanggan ">
       <div class="header-biodata">
-        <p>Biodata</p>
+        <h5>BIODATA</h5>
         </div>
         <div class="input-control">
           <label for="nama">Nama</label>
@@ -187,7 +192,7 @@ if(isset($_POST["submit"])){
 
       <div class="alamat-pengiriman">
       <div class="header-biodata">
-        <p>Pengiriman</p>
+        <h5>PENGIRIMAN</h5>
         </div>
 
         <div class="input-control">
@@ -245,7 +250,7 @@ if(isset($_POST["submit"])){
       <div class= "Ringkasan-pemesanan">
       
       <div class="header-biodata">
-        <p>Ringkasan Pemesanan</p>
+        <h5>RINGKASAN PEMESANAN</h5>
         </div>
       <section style="overflow-y: scroll; height:300px;" id="tabel-cart-handphone" >
       <table class = 'table table-bordered table-stripped '>
@@ -256,17 +261,17 @@ if(isset($_POST["submit"])){
     foreach($_SESSION['cart'] as $key => $value){
     ?>
 
-    <tr >
+<tr >
                     <td class="td-handphone"> 
                       <div class="konten-cart-isi-handphone">
                       <img class="gambar-produk" src="<?= $value['prod_img']?>"  >
                       <div class="konten-cart-informasi">
-                     <div class="konten-cart-informasi3"> <?= $value['prod_name']?></div>
-                     <div class="konten-cart-informasi2">Jml : <?= $value['prod_qty']?></div>
-                     <div class="konten-cart-informasi3">Rp. <?= number_format($value['prod_total_price'],2,",",".")?></div>
+                     <div> <?= $value['prod_name']?></div>
+                     <div>Jml : <?= $value['prod_qty']?></div>
+                     <div>Rp <?= $value['prod_total_price']?></div>
                       </div>
                       </div>  
-    </tr>
+                <tr>
     <?PHP
         }
     }
@@ -275,13 +280,14 @@ if(isset($_POST["submit"])){
     </section>
 
     <div class="footer-biodata">
-        <div><p>Total Pemesanan</p></div>
-        <div><p>Rp. <?=number_format($total,2,",",".")?></p></div>
+        <div>Total Pemesanan</div>
+        <div>Rp <?=number_format($total,2,",",".")?></div>
         </div>
     </div>
+    
     <div class="pilih-metode-pengiriman">
     <div class="header-biodata">
-        <p>Metode Pembayaran</p>
+        <h5>METODE PEMBAYARAN</h5>
         </div>
 <div class="input-control-metode-pembayaran">
 <div class="input-pembayaran-kotak">
@@ -309,8 +315,9 @@ if(isset($_POST["submit"])){
 </div>
 
    <!--tombol submit -->
-<div class="a-Bayar-sekarang"> 
-                <input class='btn btn-danger btn-block Bayar-sekarang' type="submit" value="check out" name="submit" >
+<div class="a-Bayar-sekarang">
+   
+                <input class='btn btn-danger btn-block Bayar-sekarang' type="submit" value="CHECK OUT" name="submit" >
   </div>
       </div>
       </div>
@@ -533,6 +540,8 @@ if(isset($_POST["submit"])){
     <script src="../js/glider.min.js"></script>
 
     <script src="../js/jquery-3.7.1.min.js"></script>
+
+    <!-- <script src="../js/paymen.js"></script> -->
 
 
     <!-- script -->

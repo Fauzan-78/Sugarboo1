@@ -222,12 +222,28 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 8px;
+  /* margin-top: 8px; */
+}
+
+.kotak-price{
+  display: flex;
+  flex-direction: row;
+  width: 155px;
+  justify-content: space-between;
+  /* background-color: #e63b3b; */
+  /* height: 50px; */
 }
 
 .price-buy .p-price {
   font-size: 1.3rem;
-  color: #333333;
+  color: #ff7272;
+  font-weight: 700;
+  text-decoration: line-through;
+}
+
+.p-price-after-discount{
+  font-size: 1.3rem;
+  color: #050505;
   font-weight: 700;
 }
 
@@ -246,13 +262,13 @@ body {
   left: 15px;
   top: 20px;
   width: 65px;
-  height: 24px;
+  height: 30px;
   color: #ffffff;
   background-color: #e63b3b;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 0.7rem;
+  font-size: 1.5rem;
   letter-spacing: 1px;
   z-index: 100;
   border-radius: 3px;

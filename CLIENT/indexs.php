@@ -1,10 +1,7 @@
-<!-- E8951A -->
-
-
 <?PHP
-require_once 'C:\xampp\htdocs\FINAL_TUGAS_WEB\database\connection.php';
+require_once '..\database\connection.php';
 $sql = "SELECT * FROM product WHERE product_category = 'promo'";
-$all_product=$conn->query($sql);
+$all_product=mysqli_query($conn, $sql);
 ?>
 
 
@@ -36,7 +33,7 @@ $all_product=$conn->query($sql);
           </button>
           <div class="tempat-navigasi-con-konten collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="tempat-navigasi-con-konten-list navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item menu ">
+              <li class="nav-item menu " >
                 <a class="nav-link active amenu" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item dropdown menu ">
@@ -79,17 +76,22 @@ $all_product=$conn->query($sql);
       <div id="carouselExampleAutoplaying" class="carousel slide carousel-laptop d-none d-lg-block" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="../img/baner1.png" class="d-block w-100" alt="...">
+            <img src="../img/baner/1.png" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="../img/baner2.png" class="d-block w-100" alt="...">
+            <img src="../img/baner/2.png" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="../img/baner3.png" class="d-block w-100" alt="...">
+            <img src="../img/baner/3.png" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="../img/baner4.png" class="d-block w-100" alt="...">
+            <img src="../img/baner/4.png" class="d-block w-100" alt="...">
           </div>
+          <div class="carousel-item">
+            <img src="../img/baner/5.png" class="d-block w-100" alt="...">
+          </div>
+         
+        
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -184,8 +186,11 @@ $all_product=$conn->query($sql);
 
               <!-- price-buy -->
               <div class="price-buy">
-                <span class="p-price"><?php echo $row["price"]; ?></span>
-                <button type="button" style="border:none ;" class="btn  passingID" data-id="<?= $row["product_image"]; ?>" data-id2="<?= $row["product_id"]; ?>" data-id3="<?= $row["product_name"]; ?>" data-id4="<?= $row["keterangan"]; ?>" data-id5="<?= $row["price"]; ?>">
+                <div class="kotak-price">
+                <span class="p-price">RP. <?php echo $row["price"]; ?></span>
+                <span class="p-price-after-discount" >RP. <?php echo $row["price_after_discount"]; ?></span>
+                </div>
+                <button type="button" style="border:none ;" class="btn  passingID" data-id="<?= $row["product_image"]; ?>" data-id2="<?= $row["product_id"]; ?>" data-id3="<?= $row["product_name"]; ?>" data-id4="<?= $row["keterangan"]; ?>" data-id5="<?= $row["price_after_discount"]; ?>">
                 <a href="#" class="p-btn-buy">Buy now</a>
                 </button>
               </div>
@@ -742,3 +747,4 @@ $all_product=$conn->query($sql);
     </script>
   </body>
 </html>
+

@@ -49,16 +49,16 @@ $(document).ready(function () {
     // var ids5 = $(this).attr("data-id5");
 
     $.ajax({
-      type: "POST",
+      method: "POST",
       url: "../function/handlecart.php",
       data: {
-        prod_id: prod_id,
-        prod_qty: qty,
-        prod_price: price,
-        prod_img: img,
-        prod_name: name,
-        prod_total_price: qty * price,
-        scope: "add",
+        "prod_id": prod_id,
+        "prod_qty": qty,
+        "prod_price": price,
+        "prod_img": img,
+        "prod_name": name,
+        "prod_total_price": qty * price,
+        "scope": "add"
       },
       // dataType: "dataType",
       success: function (response) {
@@ -72,7 +72,7 @@ $(document).ready(function () {
       },
     });
 
-    location.href = "../CLIENT/product.php";
+    location.href = "../function/handlecart.php";
   });
 
   // $(".Bayar-sekarang").click(function (e) {

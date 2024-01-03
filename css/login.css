@@ -10,7 +10,7 @@ body {
 }
 
 .tempat-navigasi {
-  background-color: #0D6EFD;
+  background-color:  #0D6EFD;;
   position: fixed;
   width: 100%;
   top: 0px;
@@ -96,18 +96,18 @@ a {
 }
 
 .kotaklogin {
-  background-color: white;
+  /* background-color: aqua; */
   margin-top: 20vh;
   margin-bottom: 20vh;
-  margin-left: 50vh;
+  margin-left: 20vh;
   margin-right: 20vh;
-  width: 50%;
+  width: auto;
   box-shadow: 2px 2px 50px #9a9898;
   border-radius: 10px;
 }
 
 .content-baris {
-  background-color: #0D6EFD;
+  background-color: #35c4f2;;
   height: 50px;
   border-radius: 10px 10px 0px 0px;
   display: flex;
@@ -115,11 +115,21 @@ a {
   align-items: center;
   font-size: 25px;
   font-weight: bold;
-  color: white;
+  color: #37373b;
 }
 
 .login-button {
-  margin-left: 30%;
-  width: 40%;
+  width: 100%;
   margin-bottom: 25px;
+  background-color:#35C4F2; 
+  border: solid #35C4F2;
+  color: #37373b;
+}
+
+.login-button:hover{
+  width: 100%;
+  margin-bottom: 25px;
+  background-color:#21a4cf; 
+  border: solid #21a4cf;
+  color: #37373b;
 }

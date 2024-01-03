@@ -59,9 +59,9 @@ const validateInputs = () => {
   if (namavalue === "") {
     setError(nama, "name is required");
   } else {
-    setSucces(nama);
+    setSucces(nama); 
   }
-
+  
   if (emailvalue === "") {
     setError(email, "email is required");
   } else if (!isValidEmail(emailvalue)) {
@@ -103,4 +103,6 @@ const validateInputs = () => {
   } else {
     setSucces(pembayaran);
   }
+
+  return true;
 };

@@ -6,8 +6,6 @@ require_once '../database/connection.php';
 $err = "";
 $username = "";
 $ingataku = "";
-
-
 /*Isset adalah fungsi bahasa pemrograman PHP untuk melakukan pengecekan 
 terhadap suatu variabel atau isi dari variabel yang terdefinisi1234.
  Fungsi ini mengembalikan nilai boolean (true atau false) dan berguna 
@@ -15,63 +13,75 @@ terhadap suatu variabel atau isi dari variabel yang terdefinisi1234.
  nilai true jika sebuah variabel sudah diatur atau jika variabel sudah ada, dan false
   jika variabel belum diatur atau belum ada2
   */
-if(isset($_COOKIE['cookie_username'])){
-    $cookie_username = $_COOKIE['cookie_username'];
-    $cookie_password = $_COOKIE['cookie_password'];
+// if(isset($_COOKIE['cookie_username'])){
+//     $cookie_username = $_COOKIE['cookie_username'];
+//     $cookie_password = $_COOKIE['cookie_password'];
 
-    $sql1="select * from login where username = '$cookie_username'";
-    $q1 = mysqli_query($koneksi,$sql1);
-    $r1 =mysqli_fetch_array($q1);
-    if($r1['password']== $cookie_password){
-        $_SESSION['session_username']=$cookie_username;
-        $_SESSION['session_password']=$cookie_password;
-        header("location:../ADMIN/display.php");
-    }
-}
+//     $sql1="select * from login where username = '$cookie_username'";
+//     $q1 = mysqli_query($koneksi,$sql1);
+//     $r1 =mysqli_fetch_array($q1);
+//     if($r1['password']== $cookie_password){
+//         $_SESSION['session_username']=$cookie_username;
+//         $_SESSION['session_password']=$cookie_password;
+//         header("location:/ADMIN/uploads.php");
+//     }
+// }
 
-if(isset($_SESSION['session_username'])){
-    header("location:../ADMIN/display.php");
-    exit();
+// if(isset($_SESSION['session_username'])){
+//     header("location:/ADMIN/uploads.php");
+//     exit();
     
-}
+// }
 
 if(isset($_POST['login'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
-    $ingataku = $_POST['ingataku'];
+
 
 
         if($username == '' or $password == ''){
-            $err .= "<li>Silahkan masukkan username dan juga password.</li>";
+            $err .= "<li>Silakan masukkan username dan juga password.</li>";
         }else{
             $sql1 = "select * from login where username = '$username' ";
-            $q1 = mysqli_query($conn,$sql1);
-            $r1 =mysqli_fetch_array($q1);
-
-            if($r1['username'] == ''){
+            $result = mysqli_query($conn,$sql1);
+            if($result){
+             
+              if( ($row = mysqli_fetch_assoc($result)) < 1){
                 $err .= "<li>Username <b>$username</b> tidak tersedia.</li>";
-            }elseif($r1['password']!= md5($password)){
-                $err .= "<li>Password yang dimasukkan tidak sesuai</li>";
+              }else{
+                echo $row['username'];
+                if($row['username'] == ""){
+                  $err .= "<li>Username <b>$username</b> tidak tersedia.</li>";
+              }elseif($row['password']!= md5($password)){
+                  $err .= "<li>Password yang dimasukkan tidak sesuai</li>";
+              }
+              if(empty($err)){
+                  $_SESSION['session_username'] = $username;
+                  $_SESSION['session_password'] = md5($password);
+  
+              //     if($ingataku == 1){
+              //         $cookie_name = "cookie_username";
+              //         $cookie_value = $username;
+              //         $cookie_time = time()+ (60 * 60 * 24 * 30);
+              //         setcookie($cookie_name,$cookie_value,$cookie_time,"/");
+  
+              //         $cookie_name = "cookie_password";
+              //         $cookie_value = md5($password);
+              //         $cookie_time = time()+(60 * 60 * 24 * 30);
+              //         setcookie($cookie_name,$cookie_value,$cookie_time,"/");
+              //     }
+                  header("location:/final_tugas_web/admin/display.php");
+              
+            }
+              
             }
 
-            if(empty($err)){
-            //     $_SESSION['session_username'] = $username;
-            //     $_SESSION['session_password'] = md5($password);
 
-            //     if($ingataku == 1){
-            //         $cookie_name = "cookie_username";
-            //         $cookie_value = $username;
-            //         $cookie_time = time()+ (60 * 60 * 24 * 30);
-            //         setcookie($cookie_name,$cookie_value,$cookie_time,"/");
 
-            //         $cookie_name = "cookie_password";
-            //         $cookie_value = md5($password);
-            //         $cookie_time = time()+(60 * 60 * 24 * 30);
-            //         setcookie($cookie_name,$cookie_value,$cookie_time,"/");
-            //     }
-                header("location:../admin/display.php");
-            }
+
+        
         }
+}
 }
 
 ?>
@@ -92,19 +102,19 @@ if(isset($_POST['login'])){
       <nav class="navbar tempat-navigasi navbar-expand-lg bg-body-tertiary">
         <div class="tempat-navigasi-con container-fluid">
           <a class="tempat-navigasi-con-gambar navbar-brand" href="">
-            <img class="tempat-navigasi-con-gambar1 d-none d-lg-block" src="../img/sugarboo.png" style="width:300px;margin-left:-55px;" alt="logo" />
+            <img class="tempat-navigasi-con-gambar1 d-none d-lg-block" src="../img/sugarboo.png" style="width:250px;margin-left:-55px;" alt="logo" />
           </a>
-          <!-- <button class="button-navigasi-handphone navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="button-navigasi-handphone navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"><img style="width:40px" src="../img/navigasi-burger.png" alt=""></span>
             <span class="navbar-toggler-icon"><img style="height:100px;  margin-top:-35px; margin-left:-150px;" src="../img/sugarboo.png" alt=""></span>
-          </button> -->
+          </button>
           
         </div>
       </nav>
-</section>
+    </section>
 <div class="container-fluid kotaklogin">
 <div class="row content-baris">
-    Login
+    LOGIN
 </div>
 <div class="row content-baris2">
     <?php if($err){ ?>
@@ -114,20 +124,19 @@ if(isset($_POST['login'])){
 
    <?php } ?>
 <form action="" method="post" >
-  <div class="mb-3">
-    <br>
+<div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Username</label>
     <input type="text" class="form-control" id="inputusername" name="username" value="<?php echo $username ?>" placeholder="username" >
   </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+    <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="password">
   </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="ingataku" value="1" <?php if($ingataku == 1) echo "checked"?>>Ingat Aku
+  <!-- <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="ingataku" value="1" <?php if($ingataku == 1) echo "checked"?>>ingat aku -->
     <!-- <label class="form-check-label" for="exampleCheck1">ingat saya</label> -->
-  </div>
-  <button type="submit" class="btn btn-primary login-button" name="login">Login</button>
+  <!-- </div> -->
+  <button type="submit" class="btn btn-primary login-button" name="login" >Login</button>
 </form>
 </div>
 </div>

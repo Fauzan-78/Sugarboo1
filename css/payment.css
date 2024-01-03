@@ -8,6 +8,11 @@ body {
   background-color: rgba(255, 253, 253, 0.965);
 }
 
+h5{
+  font-weight: bold;
+  margin-top: 4px;
+}
+
 .tempat-navigasi {
   background-color: #e8951a;
   position: fixed;
@@ -131,13 +136,6 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 4px 0px 4px 0px;
-}
-
-.header-biodata p{
-  font-size: medium;
-  font-weight: 600 ;
-  margin-bottom: -1px;
 }
 
 .footer-biodata {
@@ -148,11 +146,9 @@ a {
   align-items: center;
   padding-left: 10px;
   padding-right: 10px;
-}
-.footer-biodata p{
-  margin: 4px 0px 5px 0px;
-  font-weight: 600;
-  font-size: medium;
+
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .input-control {
@@ -286,27 +282,7 @@ td {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  /* font-size: 15px; */
-}
-.konten-cart-informasi .konten-cart-informasi2 {
-  padding-left: 5px;
-  /* background-color: red; */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  font-size: 13px;
-}
-
-.konten-cart-informasi .konten-cart-informasi3 {
-  padding-left: 5px;
-  margin: 3px 0px;
-  /* background-color: red; */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  font-size: 15px;
+  font-size: 25px;
 }
 
 .remove-handphone {
