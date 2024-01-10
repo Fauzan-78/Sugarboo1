@@ -1,0 +1,239 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Open Sans", "sans-serif";
+}
+
+body{
+  /* background-color: aqua; */
+}
+
+.tempat-navigasi {
+  background-color: #e8951a;
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  z-index: 100;
+}
+
+.tempat-navigasi-con {
+  /* background-color: aliceblue; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.tempat-navigasi-con-gambar {
+  /* background-color: blue; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.tempat-navigasi-con-gambar1 {
+  width: 100%;
+  /* background-color: aqua; */
+  margin-bottom: -40px;
+  margin-top: -40px;
+  margin-left: -100px;
+}
+
+.tempat-navigasi-con-konten {
+  /* background-color: red; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: -10px;
+  margin-bottom: -10px;
+  margin-left: -100px;
+}
+
+.tempat-navigasi-con-konten-list {
+  /* background-color: rebeccapurple; */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu > a {
+  color: maroon;
+  font-weight: 600;
+}
+
+.menu > a.amenu:hover {
+  background-color: maroon;
+  color: white;
+  border-radius: 5px;
+}
+
+.menu > a.shop-bag:hover {
+  background-color: rgb(242, 255, 2);
+  color: white;
+  border-radius: 5px;
+}
+
+.menu-except > a:hover {
+  transform: scale(1.2);
+}
+
+.medsos-icon-img {
+  /* background-color: red; */
+  height: 30px;
+  width: 30px;
+}
+
+.header-upload{
+  margin-top: 50px;
+}
+
+#tabel-display{
+  /* background-color: red; */
+  margin-left: 15vh;
+  margin-right: 15vh;
+  margin-top: 15vh;
+  margin-bottom: 15vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header-upload{
+  /* background-color: azure; */
+  width: 90%;
+   font-size: 40px;
+   font-weight: bold;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+}
+
+.button-uploads{
+  width: 90%;
+  border: 0.5px solid #98d8ed;
+  border-radius: 5px;
+  transition: all 0.2s ease-in-out;
+  background-color: #98d8ed ;
+  font-size: 30px;
+}
+
+.button-uploads:hover{
+transform: scale(1.02);
+background-color: #35c4f2;
+}
+
+.tabel-asli-untuk-display{
+  /* background-color: blueviolet; */
+  width: 90%;
+  margin-top: 20px;
+  box-shadow: 2px 2px 50px #9a9898;
+  font-size: 20px;
+
+  text-align: center;
+}
+
+.header-tr{
+  background-color: #35c4f2;
+  color: #19191a;
+  font-size: 20px;
+  padding: 0px 5px 0px 5px;
+  align-content: center;
+}
+
+.button-edit-product{
+  width: 100px;
+  text-decoration: none;
+  font-size: 20px;
+  /* background-color: rgb(0, 128, 255); */
+}
+
+.button-delete-product{
+  width: 100px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.konten-tr{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ /* CSS NAVBAR ADMIN */
+ .navbaradmin{
+  background-color: #0D6EFD; 
+  position: fixed; 
+  width: 100%; 
+  top: 0px; 
+  z-index: 100;
+}
+.navbaradminmenu{
+  display: flex; 
+  justify-content: space-between; 
+  flex-direction: row; 
+  align-items: center;
+}
+.navbaradminpic{
+  display: flex; 
+  flex-direction: row; 
+  justify-content: center;
+}
+
+.navlistadmin{
+  display:flex;
+  justify-content: space-evenly;
+}
+
+.navlistadmina{
+  text-decoration: none;
+  /* background-color: #35c4f2; */
+  padding: 8px;
+  color: white;
+  font-size: 22px;
+  margin-right: 80px;
+}
+
+.navlistadmina:hover{
+  text-decoration: none;
+  background-color: white;
+  border-radius: 4px;
+  padding: 8px;
+  color: black;
+  font-size: 22px;
+  margin-right: 80px;
+}
+
+.exitadmin{
+  background-color: white;
+  border: none;
+  margin-right: 10vh;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.exitadmin a{
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+/* .exitadmin:hover{
+  background-color: #0D6EFD;
+  border: solid white ;
+  margin-right: 10vh;
+  padding: 10px;
+  border-radius: 4px;
+}
+.exitadmin:hover a{
+  color: white;
+  font-weight: bold;
+  font-size: 2vh;
+} */
+
+/* END OF CSS NAVBAR ADMIN */

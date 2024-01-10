@@ -1,0 +1,174 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Open Sans", "sans-serif";
+  }
+  
+  body{
+    /* background-color: aqua; */
+  }
+/* CSS NAVBAR ADMIN */
+.navbaradmin{
+  background-color: #0D6EFD; 
+  position: fixed; 
+  width: 100%; 
+  top: 0px; 
+  z-index: 100;
+}
+.navbaradminmenu{
+  display: flex; 
+  justify-content: space-between; 
+  flex-direction: row; 
+  align-items: center;
+}
+.navbaradminpic{
+  display: flex; 
+  flex-direction: row; 
+  justify-content: center;
+}
+
+.navlistadmin{
+  display:flex;
+  justify-content: space-evenly;
+}
+
+.navlistadmina{
+  text-decoration: none;
+  /* background-color: #35c4f2; */
+  padding: 8px;
+  color: white;
+  font-size: 22px;
+  margin-right: 80px;
+}
+
+.navlistadmina:hover{
+  text-decoration: none;
+  background-color: white;
+  border-radius: 4px;
+  padding: 8px;
+  color: black;
+  font-size: 22px;
+  margin-right: 80px;
+}
+
+.exitadmin{
+  background-color: white;
+  border: none;
+  margin-right: 10vh;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.exitadmin a{
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 15px;
+}
+
+/* .exitadmin:hover{
+  background-color: #0D6EFD;
+  border: solid white ;
+  margin-right: 10vh;
+  padding: 10px;
+  border-radius: 4px;
+}
+.exitadmin:hover a{
+  color: white;
+  font-weight: bold;
+  font-size: 2vh;
+} */
+
+/* END OF CSS NAVBAR ADMIN */
+
+  #identitas_transaksi{
+    /* background-color: lightcoral; */
+    margin-top: 15vh;
+    margin-left: 20vh;
+    margin-right: 20vh;
+    box-shadow: 2px 2px 50px #9a9898;
+  }
+
+  .header_transaksi{
+    background-color: #0D6EFD;
+    font-size: 2rem;
+    color: white;
+    padding-left: 15px;
+  }
+
+  .kotak_transaksi{
+    /* background-color: rgb(255, 210, 210); */
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    
+   
+
+  }
+  .id_nama{
+    /* background-color: azure; */
+  }
+
+  .bungkus_kotak{
+    background-color: rgb(198, 230, 249);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  .kotak_transaksi_1{
+/* background-color: red; */
+display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    width: 45%;
+  }
+
+  .kotak_transaksi_2{
+    /* background-color: rgb(0, 64, 255); */
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+    width: 45%;
+      }
+
+  .catatan{
+    border: 0.5px solid rgb(17, 100, 255) ;
+    margin-top: 20px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+  }
+
+  .header_tabel_produk{
+    /* background-color: #0D6EFD; */
+    margin-left: 15px;
+    margin-right: 15px;
+    font-size: 2rem;
+  }
+
+      #tabel_transaksi_produk{
+        /* background-color: azure; */
+       margin-left: 15px;
+       margin-right: 15px;
+       border: 0.5px solid black; 
+       margin-bottom : 15vh;
+  
+       
+      }
+
+      tbody{
+        font-size: 1.3rem;
+      }
+
+      thead{
+        font-size: 1.5rem;
+      }
+  
+ 

@@ -1,10 +1,7 @@
-<!-- E8951A -->
-
-
 <?PHP
-require_once 'C:\xampp\htdocs\FINAL_TUGAS_WEB\database\connection.php';
+require_once '..\database\connection.php';
 $sql = "SELECT * FROM product WHERE product_category = 'promo'";
-$all_product=$conn->query($sql);
+$all_product=mysqli_query($conn, $sql);
 ?>
 
 
@@ -28,7 +25,7 @@ $all_product=$conn->query($sql);
       <nav class="navbar tempat-navigasi navbar-expand-lg bg-body-tertiary">
         <div class="tempat-navigasi-con container-fluid">
           <a class="tempat-navigasi-con-gambar navbar-brand" href="">
-            <img class="tempat-navigasi-con-gambar1 d-none d-lg-block" src="/img/sugarboo.png" alt="logo" />
+            <img class="tempat-navigasi-con-gambar1 d-none d-lg-block" src="../img/sugarboo.png" alt="logo" />
           </a>
           <button class="button-navigasi-handphone navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"><img style="width:40px" src="../img/navigasi-burger.png" alt=""></span>
@@ -36,11 +33,11 @@ $all_product=$conn->query($sql);
           </button>
           <div class="tempat-navigasi-con-konten collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="tempat-navigasi-con-konten-list navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item menu ">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <li class="nav-item menu " >
+                <a class="nav-link active amenu" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item dropdown menu ">
-                <a class="nav-link dropdown-toggle" href="product.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">Product</a>
+                <a class="nav-link dropdown-toggle amenu" href="product.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">Product</a>
                 <ul class="dropdown-menu">
                   <li><a class="dropdown-item" href="product.php#product-bread">bread</a></li>
                   <li><a class="dropdown-item" href="product.php#product-danish">danish</a></li>
@@ -53,18 +50,18 @@ $all_product=$conn->query($sql);
                 </ul>
               </li>
               <li class="nav-item menu ">
-                <a class="nav-link" href="about-us.php">About US</a>
+                <a class="nav-link amenu" href="about-us.php">About US</a>
               </li>
               <li class="nav-item menu ">
-                <a class="nav-link " aria-disabled="true">Outlet</a>
+                <a class="nav-link amenu" href="outlet.php" aria-disabled="true">Outlet</a>
               </li>
               <li class="nav-item menu ">
-                <a class="nav-link " aria-disabled="true" >SHOP NOW</a>
+                <a href="../function/handlecart.php" class="nav-link shop-bag" aria-disabled="true" ><img style="width:25px;" src="../img/shop-bag.png" alt=""></a>
               </li>
               <li class=" nav-item menu-except d-flex">
-                <a class="nav-link medsos-icon " aria-disabled="true" ><img class="medsos-icon-img" src="/img/youtube-icon.png" alt="yt"></a>
-                <a class="nav-link medsos-icon " aria-disabled="true" ><img class="medsos-icon-img" src="/img/instagram-icon.png" alt="yt"></a>
-                <a class="nav-link medsos-icon " aria-disabled="true" ><img class="medsos-icon-img" src="/img/facebook-icon.png" alt="yt"></a>
+                <a class="nav-link medsos-icon " aria-disabled="true" ><img class="medsos-icon-img" src="../img/youtube-icon.png" alt="yt"></a>
+                <a class="nav-link medsos-icon " aria-disabled="true" ><img class="medsos-icon-img" src="../img/instagram-icon.png" alt="yt"></a>
+                <a class="nav-link medsos-icon " aria-disabled="true" ><img class="medsos-icon-img" src="../img/facebook-icon.png" alt="yt"></a>
               </li>
           
             </ul>
@@ -79,17 +76,22 @@ $all_product=$conn->query($sql);
       <div id="carouselExampleAutoplaying" class="carousel slide carousel-laptop d-none d-lg-block" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="../img/baner1.png" class="d-block w-100" alt="...">
+            <img src="../img/baner/1.png" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="../img/baner2.png" class="d-block w-100" alt="...">
+            <img src="../img/baner/2.png" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="../img/baner3.png" class="d-block w-100" alt="...">
+            <img src="../img/baner/3.png" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="../img/baner4.png" class="d-block w-100" alt="...">
+            <img src="../img/baner/4.png" class="d-block w-100" alt="...">
           </div>
+          <div class="carousel-item">
+            <img src="../img/baner/5.png" class="d-block w-100" alt="...">
+          </div>
+         
+        
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -184,8 +186,11 @@ $all_product=$conn->query($sql);
 
               <!-- price-buy -->
               <div class="price-buy">
-                <span class="p-price"><?php echo $row["price"]; ?></span>
-                <button type="button" style="border:none ;" class="btn  passingID" data-id="<?= $row["product_image"]; ?>" data-id2="<?= $row["product_id"]; ?>" data-id3="<?= $row["product_name"]; ?>" data-id4="<?= $row["keterangan"]; ?>" data-id5="<?= $row["price"]; ?>">
+                <div class="kotak-price">
+                <span class="p-price">RP. <?php echo $row["price"]; ?></span>
+                <span class="p-price-after-discount" >RP. <?php echo $row["price_after_discount"]; ?></span>
+                </div>
+                <button type="button" style="border:none ;" class="btn  passingID" data-id="<?= $row["product_image"]; ?>" data-id2="<?= $row["product_id"]; ?>" data-id3="<?= $row["product_name"]; ?>" data-id4="<?= $row["keterangan"]; ?>" data-id5="<?= $row["price_after_discount"]; ?>">
                 <a href="#" class="p-btn-buy">Buy now</a>
                 </button>
               </div>
@@ -335,7 +340,7 @@ $all_product=$conn->query($sql);
             <div class="row" >
               <div col-12>
               <a class="tempat-foto-footer" href="" style="display: flex;justify-content:center; align-items:center;">
-            <img class="tempat-foto-footer d-none d-lg-block" style="width: 300px;" src="/img/sugarboo.png" alt="logo" />
+            <img class="tempat-foto-footer d-none d-lg-block" style="width: 300px;" src="../img/sugarboo.png" alt="logo" />
           </a>
 
               </div>
@@ -350,35 +355,35 @@ $all_product=$conn->query($sql);
               <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
               <h5 class="text-uppercase mb-4 font-weight-bold text-warning">Product</h5>
               <p class="mb-0"> 
-                <a href="product.php#product-bread" class="text" style="text-decoration:none; color:black; font-size:large">The Bread</a>
+                <a href="product.php#product-bread" class="text footer-menu" style="text-decoration:none; color:white; font-size:large">The Bread</a>
               </p>
               <p class="mb-0"> 
-                <a href="product.php#product-danish" class="text" style="text-decoration:none;color:black;font-size:large">Amazing Danish</a>
+                <a href="product.php#product-danish" class="text footer-menu" style="text-decoration:none;color:white;font-size:large">Amazing Danish</a>
               </p>
               <p class="mb-0"> 
-                <a href="product.php#product-cakes" class="text" style="text-decoration:none;color:black;font-size:large">Great Cakes</a>
+                <a href="product.php#product-cakes" class="text footer-menu" style="text-decoration:none;color:white;font-size:large">Great Cakes</a>
               </p>
               <p class="mb-0"> 
-                <a href="product.php#product-toast" class="text" style="text-decoration:none;color:black;font-size:large">Toasty Toast</a>
+                <a href="product.php#product-toast" class="text footer-menu" style="text-decoration:none;color:white;font-size:large">Toasty Toast</a>
               </p>
               <p class="mb-0"> 
-                <a href="product.php#product-hampers" class="text" style="text-decoration:none;color:black;font-size:large">Make your Hampers</a>
+                <a href="product.php#product-hampers" class="text footer-menu" style="text-decoration:none;color:white;font-size:large">Make your Hampers</a>
               </p>
               <p class="mb-0"> 
-                <a href="product.php#product-traditional" class="text" style="text-decoration:none;color:black;font-size:large">Traditional cakes</a>
+                <a href="product.php#product-traditional" class="text footer-menu" style="text-decoration:none;color:white;font-size:large">Traditional cakes</a>
               </p>
               <p class="mb-0"> 
-                <a href="product.php#product-cookies" class="text" style="text-decoration:none;color:black;font-size:large">Want a Cookies</a>
+                <a href="product.php#product-cookies" class="text footer-menu" style="text-decoration:none;color:white;font-size:large">Want a Cookies</a>
               </p>
               </div>
 
               <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
               <h5 class="text-uppercase mb-4 font-weight-bold text-warning">About</h5>
               <p class="mb-0"> 
-                <a href="" class="text-white" style="text-decoration:none;">About Us</a>
+                <a href="about-us.php" class="text-white" style="text-decoration:none;">About Us</a>
               </p>
               <p class="mb-0"> 
-                <a href="" class="text-white" style="text-decoration:none;">Location</a>
+                <a href="outlet.php" class="text-white" style="text-decoration:none;">Location</a>
               </p>
               <p class="mb-0"> 
                 <a href="" class="text-white" style="text-decoration:none;">Contact Us</a>
@@ -389,7 +394,9 @@ $all_product=$conn->query($sql);
               <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
               <h5 class="text-uppercase mb-2 font-weight-bold text-warning">Order online,pick it up in store & enjoy</h5>
               <div class="choose-store">
+                <a href="outlet.php" style="color:maroon;">
                 Choose your store
+                </a>
               </div>
              
               </div>
@@ -406,13 +413,13 @@ $all_product=$conn->query($sql);
                 <div class="text-center text-md-right">
                   <ul class="list-unstyled list-inline">
                     <li class="list-inline-item">
-                      <a  aria-disabled="true" ><img class="medsos-icon-img" src="/img/youtube-icon.png" alt="yt"></a>
+                      <a  aria-disabled="true" ><img class="medsos-icon-img" src="../img/youtube-icon.png" alt="yt"></a>
                     </li>
                     <li class="list-inline-item">
-                      <a aria-disabled="true" ><img class="medsos-icon-img" src="/img/instagram-icon.png" alt="yt"></a>
+                      <a aria-disabled="true" ><img class="medsos-icon-img" src="../img/instagram-icon.png" alt="yt"></a>
                     </li>
                     <li class="list-inline-item">
-                      <a  aria-disabled="true" ><img class="medsos-icon-img" src="/img/facebook-icon.png" alt="yt"></a>
+                      <a  aria-disabled="true" ><img class="medsos-icon-img" src="../img/facebook-icon.png" alt="yt"></a>
                     </li>
                   </ul>
                 </div>
@@ -507,13 +514,13 @@ $all_product=$conn->query($sql);
                 <div class="text-center text-md-right">
                   <ul class="list-unstyled list-inline">
                     <li class="list-inline-item">
-                      <a  aria-disabled="true" ><img class="medsos-icon-img" src="/img/youtube-icon.png" alt="yt"></a>
+                      <a  aria-disabled="true" ><img class="medsos-icon-img" src="../img/youtube-icon.png" alt="yt"></a>
                     </li>
                     <li class="list-inline-item">
-                      <a aria-disabled="true" ><img class="medsos-icon-img" src="/img/instagram-icon.png" alt="yt"></a>
+                      <a aria-disabled="true" ><img class="medsos-icon-img" src="../img/instagram-icon.png" alt="yt"></a>
                     </li>
                     <li class="list-inline-item">
-                      <a  aria-disabled="true" ><img class="medsos-icon-img" src="/img/facebook-icon.png" alt="yt"></a>
+                      <a  aria-disabled="true" ><img class="medsos-icon-img" src="../img/facebook-icon.png" alt="yt"></a>
                     </li>
                   </ul>
                 </div>
@@ -740,3 +747,4 @@ $all_product=$conn->query($sql);
     </script>
   </body>
 </html>
+
